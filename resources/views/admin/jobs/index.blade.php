@@ -1,61 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Admin Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            display: flex;
-        }
-        .sidebar {
-            width: 250px;
-            height: 100vh;
-            background: #343a40;
-            color: white;
-            padding: 20px;
-        }
-        .sidebar a {
-            color: #ccc;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 10px;
-        }
-        .sidebar a:hover {
-            color: #fff;
-        }
-        .main {
-            flex-grow: 1;
-            padding: 20px;
-        }
-    </style>
-</head>
-<body>
+@extends('admin.layouts.app')
 
-    <div class="sidebar">
-        <h4>Admin Panel</h4>
-        <hr>
-        <a href="{{ route('admin.dashboard') }}">Dashboard</a>
-        <a href="{{route('admin.active.jobs')}}">Active Jobs</a>
-        <a href="{{route('admin.pending.jobs')}}">Pending Jobs</a>
-          <a href="{{route('admin.trashed.jobs')}}"><i class="fa fa-trash" aria-hidden="true"></i>Trash</a>
-        <a href="#">Users</a>
-        <a href="#">Settings</a>
-         <a href="{{route('admin.categories.list')}}">Add Category</a>
-        <a href="{{route('admin.profile.edit')}}">Profile</a>
-
-        <form action="{{ route('admin.logout') }}" method="POST" class="mt-3">
-            @csrf
-            <button type="submit" class="btn btn-sm btn-danger">Logout</button>
-        </form>
-    </div>
-
-    <div class="main">
-       @extends('layouts.admin')
-
-@section('title', 'Unapproved Valid Jobs')
 
 @section('content')
+
+<div class="main">
+
 <div class="container py-4">
     <h3 class="mb-4">Unapproved & Valid Job Posts</h3>
 
@@ -125,12 +74,9 @@
         </div>
     @endif
 </div>
-@endsection
   
 
 
     </div>
 @include('partials.toast')
-</body>
-</html>
-
+@endsection
