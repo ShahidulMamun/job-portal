@@ -1,6 +1,7 @@
-@extends('layouts.app')
+@extends('admin.layouts.app')
 
 @section('content')
+
 <div class="container">
     <h2>Categories</h2>
     <a href="{{ route('admin.categories.create') }}" class="btn btn-primary mb-3">Add New Category</a>

@@ -1,6 +1,7 @@
-@extends('layouts.app')
+@extends('admin.layouts.app')
 
 @section('content')
+
 <div class="container">
     <h2>Add New Category</h2>
 
