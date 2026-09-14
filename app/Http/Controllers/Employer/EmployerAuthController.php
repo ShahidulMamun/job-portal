@@ -48,11 +48,11 @@ class EmployerAuthController extends Controller
 
        auth()->guard('employer')->login($employer);
 
-         return response()->json([
-            'redirect' => route('employer.dashboard'),
-            'message' => 'You registered successfully as a Employer'
-        ]);
-
+        
+       
+       return redirect()->route('candidate.dashboard')
+          ->with('message','You registered successfully as a Employer');
+     
   
     }
 
