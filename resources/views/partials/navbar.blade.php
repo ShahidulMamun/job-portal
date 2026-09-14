@@ -1,56 +1,18 @@
- <section class="navbar-area">
-   
-          <!-- Start Navbar Area -->
-        <div class="navbar-area navbar-area-two fixed-top">
-
-            <!-- Menu For Mobile Device -->
-            <div class="mobile-nav">
-                <a href="index.html" class="logo">
-                    <img src="assets/img/logo.png" alt="Logo">
-                </a>
-            </div>
-
-            <!-- Menu For Desktop Device -->
-            <div class="main-nav">
-                <div class="container">
-                    <nav class="navbar navbar-expand-md navbar-light">
-                        <a class="navbar-brand" href="index.html">
-                            <img src="assets/img/logo.png" alt="Logo">
-                        </a>
-                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-                            <ul class="navbar-nav">
-                               <li class="nav-item">
-                                    <a href="about.html" class="nav-link">Home</a>
-                                </li>
-                               <!--  <li class="nav-item">
-                                    <a href="about.html" class="nav-link">About</a>
-                                </li> -->
-                                <li class="nav-item">
-                                    <a href="about.html" class="nav-link">Jobs</a>
-                                </li>
-                                 <li class="nav-item">
-                                    <a href="about.html" class="nav-link">Candidate</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">Contact</a>
-                                </li>
-                            </ul>
-                            <div class="common-btn">
-                                <a class="login-btn" style="padding: 6px;font-size: 13px" href="{{route('login')}}">
-                                    <i class="icofont-plus-square"></i>
-                                    Login
-                                </a>
-                                <a class="sign-up-btn" style="padding: 6px;font-size: 13px" href="{{route('register')}}">
-                                    <i class="icofont-user-alt-4"></i>
-                                    Register
-                                </a>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-        <!-- End Navbar Area -->
- 
- </section>
-  
+    <header>
+    <div class="container">
+    <nav>
+    <div class="logo-wordmark"><div class="mark"><i class="fas fa-briefcase"></i></div>LivejobsBD</div>
+    <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#jobs">Find Jobs</a></li>
+    <li><a href="#companies">Companies</a></li>
+    <li><a href="#candidates">Candidates</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="{{route('login')}}" class="btn btn-gold"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
+    <li><a href="{{route('register')}}" class="btn btn-gold"><i class="fa fa-plus-circle" aria-hidden="true"></i> Register</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
+    </nav>
+    </div>
+    </header>
