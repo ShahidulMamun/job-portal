@@ -93,6 +93,30 @@ class JobPost extends Model
 
     }
 
+    /**
+     * Jobs that are published, approved and still open for applications.
+     * Used by the public home page, search and listing.
+     */
+    public function scopeOpen($query)
+    {
+        $today = now()->toDateString();
+        $time  = now()->toTimeString();
+
+        return $query->where('job_posts.is_approved', true)
+            ->where('job_posts.status', true)
+            ->where(function ($q) use ($today, $time) {
+                $q->whereNull('job_posts.deadline')
+                  ->orWhere('job_posts.deadline', '>', $today)
+                  ->orWhere(function ($q2) use ($today, $time) {
+                      $q2->where('job_posts.deadline', '=', $today)
+                         ->where(function ($q3) use ($time) {
+                             $q3->whereNull('job_posts.application_deadline_time')
+                                ->orWhere('job_posts.application_deadline_time', '>', $time);
+                         });
+                  });
+            });
+    }
+
     public function scopemyJobs($query){
 
         $employerId = auth('employer')->id();

@@ -19,7 +19,9 @@ use App\Models\JobPost;
 */
 
 // Guest routes
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/jobs', [HomeController::class, 'jobs'])->name('jobs.index');
+Route::get('/search/suggest', [HomeController::class, 'suggest'])->middleware('throttle:60,1')->name('search.suggest');
 Route::get('/jobs/{job:slug}', [HomeController::class, 'show'])->name('jobs.show');
 
 
