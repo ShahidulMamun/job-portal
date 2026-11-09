@@ -57,7 +57,7 @@ class HomeController extends Controller
             ->withCount(['jobs' => fn ($q) => $q->open()])
             ->orderByDesc('jobs_count')
             ->orderBy('name')
-            ->take(8)
+            ->take(12)
             ->get();
 
         $allCategories = $this->allCategories();
