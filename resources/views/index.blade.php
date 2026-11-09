@@ -23,43 +23,7 @@
 
 @section('content')
 
-{{-- ============================= HERO ============================= --}}
-<section class="hero" id="home">
-    <div class="hero-bg" aria-hidden="true"><span class="orb orb-1"></span><span class="orb orb-2"></span></div>
-
-    <div class="container hero-inner">
-        <div class="hero-pill reveal">
-            <span class="pulse"></span>
-            <strong>{{ number_format($stats['jobs']) }}</strong> live jobs
-            <span class="sep"></span>
-            Updated every day
-        </div>
-
-        <h1 class="reveal">Find the job you'll be <em>proud</em> to wake up for.</h1>
-        <p class="hero-sub reveal">Verified employers, salary and deadline shown up front, and no fees for job seekers &mdash; ever.
-            <span class="bn">আপনার স্বপ্নের চাকরি এখন এক সার্চেই।</span></p>
-
-        <div class="hero-search reveal">
-            @include('partials.search-box', ['filters' => [], 'allCategories' => $allCategories, 'popular' => $popular])
-
-            <div class="hero-popular">
-                <span>Popular:</span>
-                @foreach ($popular as $term)
-                    <a href="{{ route('jobs.index', ['q' => $term]) }}">{{ $term }}</a>
-                @endforeach
-            </div>
-
-            <div class="quick-pills" aria-label="Quick filters">
-                <a href="{{ route('jobs.index', ['remote' => 1]) }}"><i class="fa-solid fa-house-laptop"></i> Remote</a>
-                <a href="{{ route('jobs.index', ['level' => ['Entry']]) }}"><i class="fa-solid fa-seedling"></i> Fresher friendly</a>
-                <a href="{{ route('jobs.index', ['type' => ['internship']]) }}"><i class="fa-solid fa-user-graduate"></i> Internships</a>
-                <a href="{{ route('jobs.index', ['type' => ['part-time']]) }}"><i class="fa-regular fa-clock"></i> Part-time</a>
-                <a href="{{ route('jobs.index', ['posted' => 1]) }}"><i class="fa-solid fa-bolt"></i> Posted today</a>
-                <a href="{{ route('jobs.index', ['sort' => 'deadline']) }}"><i class="fa-regular fa-hourglass-half"></i> Closing soon</a>
-            </div>
-        </div>
-    </div>
-</section>
+<h1 class="sr-only">Find jobs and hire talent in Bangladesh</h1>
 
 {{-- ============================= STATS ============================= --}}
 <section class="stats-band">
@@ -73,8 +37,8 @@
     </div>
 </section>
 
-{{-- ============================= CATEGORIES ============================= --}}
-<section class="section" id="categories">
+{{-- ============================= CATEGORIES (full width) ============================= --}}
+<section class="section section--cats" id="categories">
     <div class="container">
         <div class="section-head reveal">
             <div>
@@ -84,19 +48,58 @@
             <a href="{{ route('jobs.index') }}" class="link-arrow">All categories <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
-        <div class="cat-grid">
+        <div class="hcat-grid">
             @forelse ($categories as $cat)
-                <a href="{{ route('jobs.index', ['category' => $cat->id]) }}" class="cat-card reveal">
-                    <span class="cat-icon"><i class="fa-solid {{ $iconFor($cat->name) }}"></i></span>
-                    <span class="cat-body">
+                <a href="{{ route('jobs.index', ['category' => $cat->id]) }}" class="hcat reveal">
+                    <span class="hcat-ico"><i class="fa-solid {{ $iconFor($cat->name) }}"></i></span>
+                    <span class="hcat-txt">
                         <strong>{{ $cat->name }}</strong>
                         <small>{{ number_format($cat->jobs_count) }} {{ Str::plural('job', $cat->jobs_count) }}</small>
                     </span>
-                    <i class="fa-solid fa-arrow-right go"></i>
                 </a>
             @empty
                 <p class="muted">Categories will appear here once they are added.</p>
             @endforelse
+        </div>
+    </div>
+</section>
+
+{{-- ============================= SEARCH + CANDIDATE REGISTRATION ============================= --}}
+<section class="hero" id="home">
+    <div class="hero-bg" aria-hidden="true"></div>
+
+    <div class="container hero-inner">
+        <div class="hero-pill reveal">
+            <span class="pulse"></span>
+            <strong>{{ number_format($stats['jobs']) }}</strong> live jobs
+            <span class="sep"></span>
+            Updated every day
+        </div>
+
+        <div class="hero-split">
+            <section class="hero-card hero-card--seeker reveal" aria-labelledby="seekerTitle">
+                <span class="hc-badge"><i class="fa-solid fa-magnifying-glass"></i> Job search</span>
+                <h2 id="seekerTitle">Find your next job</h2>
+
+                @include('partials.search-box', ['filters' => [], 'allCategories' => $allCategories, 'popular' => $popular])
+
+                <div class="quick-pills" aria-label="Quick filters">
+                    <a href="{{ route('jobs.index', ['remote' => 1]) }}"><i class="fa-solid fa-house-laptop"></i> Remote</a>
+                    <a href="{{ route('jobs.index', ['level' => ['Entry']]) }}"><i class="fa-solid fa-seedling"></i> Fresher friendly</a>
+                    <a href="{{ route('jobs.index', ['type' => ['internship']]) }}"><i class="fa-solid fa-user-graduate"></i> Internships</a>
+                    <a href="{{ route('jobs.index', ['posted' => 1]) }}"><i class="fa-solid fa-bolt"></i> Posted today</a>
+                </div>
+            </section>
+
+            <section class="hero-card hero-card--reg reveal" aria-labelledby="regTitle">
+                <span class="hc-badge hc-badge--ink"><i class="fa-regular fa-user"></i> Candidate registration</span>
+                <h2 id="regTitle">Create your free profile</h2>
+                <p class="hc-sub">Upload your CV once and apply to jobs in one click.</p>
+                @include('partials.cv-drop')
+                @guest
+                    <p class="hc-login">Already registered? <a href="{{ route('login') }}">Log in</a></p>
+                @endguest
+            </section>
         </div>
     </div>
 </section>
@@ -121,7 +124,7 @@
             <button data-tab="internship" role="tab">Internship</button>
         </div>
 
-        <div class="job-grid" id="jobGrid">
+        <div class="job-list" id="jobGrid">
             @forelse ($jobs as $job)
                 @include('partials.job-card', ['job' => $job])
             @empty
@@ -164,35 +167,29 @@
     </div>
 </section>
 
-{{-- ============================= HOW IT WORKS ============================= --}}
-<section class="section section--dark" id="how">
+{{-- ============================= RECRUITER ============================= --}}
+<section class="section" id="recruiters">
     <div class="container">
-        <div class="section-head section-head--center reveal">
-            <span class="eyebrow eyebrow--gold">Simple by design</span>
-            <h2>From search to <em>offer</em> in three steps</h2>
-        </div>
+        <section class="hirer-wide reveal" aria-labelledby="hirerTitle">
+            <div class="hirer-copy">
+                <span class="hc-badge hc-badge--ink"><i class="fa-regular fa-building"></i> Recruiter</span>
+                <h2 id="hirerTitle">Hire the right people, faster</h2>
+                <p class="hc-sub">Post a job in about five minutes and reach job seekers across Bangladesh.</p>
 
-        <div class="steps">
-            <div class="step reveal">
-                <span class="step-no">01</span>
-                <h3>Create your profile</h3>
-                <p>Sign up free in a minute. Upload your CV once and reuse it for every application.</p>
-            </div>
-            <div class="step reveal">
-                <span class="step-no">02</span>
-                <h3>Search smart</h3>
-                <p>Filter by city, field, level and salary clarity. Voice search works in English and Bangla.</p>
-            </div>
-            <div class="step reveal">
-                <span class="step-no">03</span>
-                <h3>Apply with one click</h3>
-                <p>Send your CV and a short cover letter, then track every application from your dashboard.</p>
-            </div>
-        </div>
+                <ul class="checks">
+                    <li><i class="fa-solid fa-circle-check"></i> Post a job in about five minutes</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Reach active job seekers across Bangladesh</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Review every application in one dashboard</li>
+                </ul>
 
-        <div class="center-cta">
-            <a href="{{ route('register') }}" class="btn btn-gold btn-lg">Get started &mdash; it's free <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
+                <div class="hc-actions">
+                    <a href="{{ route('employer.register') }}" class="btn btn-gold">Post a job <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="{{ route('employer.login') }}" class="btn btn-ghost">Employer login</a>
+                </div>
+                <p class="hc-stat"><strong>{{ number_format($stats['candidates']) }}</strong> job seekers ready to apply</p>
+            </div>
+            <div class="hirer-art" aria-hidden="true">@include('partials.desk-art')</div>
+        </section>
     </div>
 </section>
 
