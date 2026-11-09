@@ -14,7 +14,8 @@ class EmployerAuthController extends Controller
 
        $captcha = $this->generateCaptcha(); 
       
-        return view('employer.register-form', [
+        return view('auth.register', [
+            'role' => 'employer',
             'captchaNum1' => $captcha['num1'],
             'captchaNum2' => $captcha['num2'],
         ]);
@@ -50,8 +51,8 @@ class EmployerAuthController extends Controller
 
         
        
-       return redirect()->route('candidate.dashboard')
-          ->with('message','You registered successfully as a Employer');
+       return redirect()->route('employer.dashboard')
+          ->with('success','You registered successfully as an Employer');
      
   
     }
@@ -59,7 +60,7 @@ class EmployerAuthController extends Controller
     
      public function showLoginForm()
     {
-        return view('login');
+        return view('auth.login', ['role' => 'employer']);
     }
 
     public function login(Request $request)
