@@ -28,9 +28,9 @@ return new class extends Migration
             $table->string('resume')->nullable();
             $table->text('bio')->nullable();
             $table->string('timezone')->nullable();
-            $table->string('linkedin_url')->nullablae();
-            $table->string('github_url')->nullablae();
-            $table->string('portfolio_url')->nullablae();
+            $table->string('linkedin_url')->nullable();
+            $table->string('github_url')->nullable();
+            $table->string('portfolio_url')->nullable();
             $table->enum('status',['pending','active','inactive','suspended','banned'])->default('pending');
             $table->timestamp('banned_at')->nullable();
             $table->unsignedInteger('banned_count')->default('0');
