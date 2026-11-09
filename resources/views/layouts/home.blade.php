@@ -9,7 +9,7 @@
     <meta property="og:title" content="@yield('title', 'LivejobsBD – Find your next job in Bangladesh')">
     <meta property="og:description" content="@yield('description', 'Search verified jobs across Bangladesh. Free for job seekers.')">
     <meta property="og:type" content="website">
-    <meta name="theme-color" content="#0a1730">
+    <meta name="theme-color" content="#f8f5ef">
     <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,6 +44,8 @@
     </main>
 
     @include('partials.site-footer')
+
+    <button type="button" class="to-top" id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
 
     <script src="{{ asset('js/premium.js') }}?v={{ @filemtime(public_path('js/premium.js')) }}" defer></script>
     @stack('scripts')

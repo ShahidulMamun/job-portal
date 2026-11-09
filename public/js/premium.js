@@ -32,6 +32,63 @@
         });
     })();
 
+    /* ------------------------------------------- Scroll UX (progress, mini search, to-top) */
+    (function scrollUx() {
+        var header = $('#siteHeader'), bar = $('#scrollProgress'), top = $('#toTop');
+        var mainBox = $('main form[data-search]');
+        var ticking = false;
+
+        function update() {
+            ticking = false;
+            var y = window.scrollY, max = document.documentElement.scrollHeight - window.innerHeight;
+            if (bar && max > 0) bar.style.transform = 'scaleX(' + Math.min(y / max, 1) + ')';
+            if (top) top.classList.toggle('is-visible', y > 900);
+        }
+        window.addEventListener('scroll', function () {
+            if (!ticking) { ticking = true; requestAnimationFrame(update); }
+        }, { passive: true });
+        update();
+
+        if (top) top.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }); });
+
+        // When the big search box scrolls out of view, move a compact search into the header
+        if (header && mainBox && 'IntersectionObserver' in window) {
+            new IntersectionObserver(function (entries) {
+                var e = entries[0];
+                header.classList.toggle('show-search', !e.isIntersecting && e.boundingClientRect.top < 0);
+            }, { threshold: 0 }).observe(mainBox);
+        }
+    })();
+
+    /* ------------------------------------------------------- CV drop zone */
+    (function cvDrop() {
+        var zone = $('#cvDrop'), input = $('#cvFile');
+        if (!zone || !input) return;
+        var idle = $('.cvdrop-idle', zone), done = $('.cvdrop-done', zone), err = $('.cvdrop-error', zone), nameEl = $('[data-cv-name]', zone);
+        var MAX = 2 * 1024 * 1024, OK = /\.(pdf|docx?)$/i;
+
+        function fail(msg) { err.textContent = msg; err.hidden = false; }
+        function accept(file) {
+            err.hidden = true;
+            if (!file) return;
+            if (!OK.test(file.name)) { fail('Please choose a PDF, DOC or DOCX file.'); return; }
+            if (file.size > MAX) { fail('That file is over 2 MB. Please choose a smaller one.'); return; }
+            nameEl.textContent = file.name;
+            idle.hidden = true; done.hidden = false;
+        }
+        function reset() { input.value = ''; err.hidden = true; done.hidden = true; idle.hidden = false; }
+
+        zone.addEventListener('click', function (e) { if (e.target.closest('a, [data-cv-reset]')) return; if (!done.hidden) return; input.click(); });
+        zone.addEventListener('keydown', function (e) {
+            if ((e.key === 'Enter' || e.key === ' ') && e.target === zone && done.hidden) { e.preventDefault(); input.click(); }
+        });
+        input.addEventListener('change', function () { accept(input.files[0]); });
+        ['dragenter', 'dragover'].forEach(function (n) { zone.addEventListener(n, function (e) { e.preventDefault(); zone.classList.add('is-over'); }); });
+        ['dragleave', 'drop'].forEach(function (n) { zone.addEventListener(n, function (e) { e.preventDefault(); zone.classList.remove('is-over'); }); });
+        zone.addEventListener('drop', function (e) { accept(e.dataTransfer && e.dataTransfer.files[0]); });
+        $('[data-cv-reset]', zone).addEventListener('click', function (e) { e.stopPropagation(); reset(); });
+    })();
+
     /* ---------------------------------------------------------------- Reveal */
     (function reveal() {
         var items = $$('.reveal');
@@ -287,7 +344,11 @@
             else if (e.key === 'Escape') { dq.close(); }
         });
 
-        function toggleClear() { if (clearBtn) clearBtn.hidden = qIn.value.length === 0; }
+        var kbd = $('[data-kbd]', form);
+        function toggleClear() {
+            if (clearBtn) clearBtn.hidden = qIn.value.length === 0;
+            if (kbd) kbd.classList.toggle('is-hidden', qIn.value.length > 0);
+        }
         if (clearBtn) clearBtn.addEventListener('click', function () { qIn.value = ''; toggleClear(); qIn.focus(); showIdle(); });
         toggleClear();
 

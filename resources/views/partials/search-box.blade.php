@@ -17,6 +17,7 @@
                    placeholder="Job title, skill or company" role="combobox"
                    aria-autocomplete="list" aria-expanded="false" aria-controls="sdropQ">
         </div>
+        <kbd class="sbox-kbd" data-kbd aria-hidden="true" title="Press / to search">/</kbd>
         <button type="button" class="sbox-icon" data-clear hidden aria-label="Clear search"><i class="fa-solid fa-xmark"></i></button>
         <button type="button" class="sbox-lang" data-voice-lang hidden title="Voice language">EN</button>
         <button type="button" class="sbox-icon sbox-mic" data-mic hidden aria-label="Search by voice"><i class="fa-solid fa-microphone"></i></button>

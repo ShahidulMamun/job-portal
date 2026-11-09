@@ -2,7 +2,7 @@
     <div class="container">
         <div class="footer-grid">
             <div class="footer-about">
-                <a href="{{ url('/') }}" class="brand brand--light">
+                <a href="{{ url('/') }}" class="brand">
                     <span class="brand-mark"><i class="fa-solid fa-briefcase"></i></span>
                     <span class="brand-name">Livejobs<b>BD</b></span>
                 </a>
@@ -31,7 +31,7 @@
                 <ul>
                     <li><a href="{{ route('employer.register') }}">Post a job</a></li>
                     <li><a href="{{ route('employer.login') }}">Employer login</a></li>
-                    <li><a href="{{ url('/') }}#how">How hiring works</a></li>
+                    <li><a href="{{ url('/') }}#recruiters">How hiring works</a></li>
                 </ul>
             </div>
 

@@ -5,11 +5,16 @@
             <span class="brand-name">Livejobs<b>BD</b></span>
         </a>
 
+        <form class="header-search" action="{{ route('jobs.index') }}" method="GET" role="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" name="q" value="{{ request('q') }}" placeholder="Search jobs, skills, companies…" aria-label="Search jobs" maxlength="100">
+            <button type="submit">Search</button>
+        </form>
+
         <nav class="main-nav" id="mainNav" aria-label="Primary">
             <a href="{{ route('jobs.index') }}" class="{{ request()->routeIs('jobs.index') ? 'is-current' : '' }}">Find jobs</a>
             <a href="{{ url('/') }}#categories">Categories</a>
             <a href="{{ url('/') }}#companies">Companies</a>
-            <a href="{{ url('/') }}#how">How it works</a>
             <a href="{{ route('employer.login') }}" class="nav-employer"><i class="fa-regular fa-building"></i> For employers</a>
 
             <div class="nav-actions">
@@ -28,4 +33,5 @@
             <span></span><span></span><span></span>
         </button>
     </div>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 </header>
