@@ -25,15 +25,74 @@
 
 <h1 class="sr-only">Find jobs and hire talent in Bangladesh</h1>
 
-{{-- ============================= STATS ============================= --}}
-<section class="stats-band">
-    <div class="container">
-        <div class="stats-grid reveal">
-            <div class="stat"><i class="fa-solid fa-briefcase"></i><strong data-count="{{ $stats['jobs'] }}">{{ number_format($stats['jobs']) }}</strong><span>Open jobs</span></div>
-            <div class="stat"><i class="fa-regular fa-building"></i><strong data-count="{{ $stats['companies'] }}">{{ number_format($stats['companies']) }}</strong><span>Companies hiring</span></div>
-            <div class="stat"><i class="fa-solid fa-user-group"></i><strong data-count="{{ $stats['candidates'] }}">{{ number_format($stats['candidates']) }}</strong><span>Job seekers</span></div>
-            <div class="stat"><i class="fa-regular fa-paper-plane"></i><strong data-count="{{ $stats['applications'] }}">{{ number_format($stats['applications']) }}</strong><span>Applications sent</span></div>
+{{-- ============================= HERO: SEARCH → COUNTS → CITIES ============================= --}}
+@php
+    $liveCount  = $stats['jobs'] ?? 0;
+    $compCount  = $stats['companies'] ?? 0;
+    $govtCount  = $stats['govt'] ?? 0;
+    $todayCount = $stats['today'] ?? 0;
+@endphp
+<section class="hh" id="home">
+    <div class="hero-bg" aria-hidden="true"></div>
+
+    <div class="container hh-inner">
+
+        {{-- 1. Full-width search card --}}
+        <div class="hh-search">
+            @include('partials.search-box', ['filters' => [], 'allCategories' => $allCategories, 'popular' => $popular])
+
+            <div class="quick-pills" aria-label="Quick filters">
+                <a href="{{ route('jobs.index', ['remote' => 1]) }}"><i class="fa-solid fa-house-laptop"></i> Remote</a>
+                <a href="{{ route('jobs.index', ['level' => ['Entry']]) }}"><i class="fa-solid fa-seedling"></i> Fresher friendly</a>
+                <a href="{{ route('jobs.index', ['type' => ['internship']]) }}"><i class="fa-solid fa-user-graduate"></i> Internships</a>
+                <a href="{{ route('jobs.index', ['posted' => 1]) }}"><i class="fa-solid fa-bolt"></i> Posted today</a>
+            </div>
         </div>
+
+        {{-- 2. Count cards --}}
+        <div class="hh-stats">
+            <a href="{{ route('jobs.index') }}" class="hh-stat hh-stat--live">
+                <span class="hh-live"><i></i>LIVE</span>
+                <span class="hh-stat-ico"><i class="fa-solid fa-briefcase"></i></span>
+                <span class="hh-stat-body">
+                    <strong class="hh-num" data-hh-count="{{ $liveCount }}">{{ number_format($liveCount) }}</strong>
+                    <small>Live Jobs</small>
+                </span>
+            </a>
+            <a href="#companies" class="hh-stat hh-stat--comp">
+                <span class="hh-stat-ico"><i class="fa-regular fa-building"></i></span>
+                <span class="hh-stat-body">
+                    <strong class="hh-num" data-hh-count="{{ $compCount }}">{{ number_format($compCount) }}</strong>
+                    <small>Companies Hiring</small>
+                </span>
+            </a>
+            <a href="{{ route('jobs.index', ['govt' => 1]) }}" class="hh-stat hh-stat--govt">
+                <span class="hh-stat-ico"><i class="fa-solid fa-landmark"></i></span>
+                <span class="hh-stat-body">
+                    <strong class="hh-num" data-hh-count="{{ $govtCount }}">{{ number_format($govtCount) }}</strong>
+                    <small>Govt. Jobs</small>
+                </span>
+            </a>
+            <a href="{{ route('jobs.index', ['posted' => 1]) }}" class="hh-stat hh-stat--new">
+                <span class="hh-stat-ico"><i class="fa-solid fa-bolt"></i></span>
+                <span class="hh-stat-body">
+                    <strong class="hh-num" data-hh-count="{{ $todayCount }}">{{ number_format($todayCount) }}</strong>
+                    <small>New Jobs</small>
+                </span>
+            </a>
+        </div>
+
+        {{-- 3. Cities – one single row --}}
+        <div class="hh-cities">
+            <span class="hh-cities-label"><i class="fa-solid fa-location-dot"></i><span>Jobs by city</span></span>
+            <div class="hh-cities-track">
+                @foreach ($cities as $city => $count)
+                    <a href="{{ route('jobs.index', ['location' => $city]) }}" class="hh-city">{{ $city }} <small>{{ number_format($count) }}</small></a>
+                @endforeach
+                <a href="{{ route('jobs.index', ['remote' => 1]) }}" class="hh-city hh-city--remote"><i class="fa-solid fa-house-laptop"></i> Remote <small>{{ number_format($remoteCount) }}</small></a>
+            </div>
+        </div>
+
     </div>
 </section>
 
@@ -60,46 +119,6 @@
             @empty
                 <p class="muted">Categories will appear here once they are added.</p>
             @endforelse
-        </div>
-    </div>
-</section>
-
-{{-- ============================= SEARCH + CANDIDATE REGISTRATION ============================= --}}
-<section class="hero" id="home">
-    <div class="hero-bg" aria-hidden="true"></div>
-
-    <div class="container hero-inner">
-        <div class="hero-pill reveal">
-            <span class="pulse"></span>
-            <strong>{{ number_format($stats['jobs']) }}</strong> live jobs
-            <span class="sep"></span>
-            Updated every day
-        </div>
-
-        <div class="hero-split">
-            <section class="hero-card hero-card--seeker reveal" aria-labelledby="seekerTitle">
-                <span class="hc-badge"><i class="fa-solid fa-magnifying-glass"></i> Job search</span>
-                <h2 id="seekerTitle">Find your next job</h2>
-
-                @include('partials.search-box', ['filters' => [], 'allCategories' => $allCategories, 'popular' => $popular])
-
-                <div class="quick-pills" aria-label="Quick filters">
-                    <a href="{{ route('jobs.index', ['remote' => 1]) }}"><i class="fa-solid fa-house-laptop"></i> Remote</a>
-                    <a href="{{ route('jobs.index', ['level' => ['Entry']]) }}"><i class="fa-solid fa-seedling"></i> Fresher friendly</a>
-                    <a href="{{ route('jobs.index', ['type' => ['internship']]) }}"><i class="fa-solid fa-user-graduate"></i> Internships</a>
-                    <a href="{{ route('jobs.index', ['posted' => 1]) }}"><i class="fa-solid fa-bolt"></i> Posted today</a>
-                </div>
-            </section>
-
-            <section class="hero-card hero-card--reg reveal" aria-labelledby="regTitle">
-                <span class="hc-badge hc-badge--ink"><i class="fa-regular fa-user"></i> Candidate registration</span>
-                <h2 id="regTitle">Create your free profile</h2>
-                <p class="hc-sub">Upload your CV once and apply to jobs in one click.</p>
-                @include('partials.cv-drop')
-                @guest
-                    <p class="hc-login">Already registered? <a href="{{ route('login') }}">Log in</a></p>
-                @endguest
-            </section>
         </div>
     </div>
 </section>
@@ -140,29 +159,6 @@
 
         <div class="center-cta">
             <a href="{{ route('jobs.index') }}" class="btn btn-dark">Browse all jobs <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-    </div>
-</section>
-
-{{-- ============================= CITIES ============================= --}}
-<section class="section" id="cities">
-    <div class="container">
-        <div class="section-head reveal">
-            <div>
-                <span class="eyebrow">Jobs near you</span>
-                <h2>Explore by <em>city</em></h2>
-            </div>
-            <a href="{{ route('jobs.index', ['remote' => 1]) }}" class="link-arrow">{{ number_format($remoteCount) }} remote jobs <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-
-        <div class="city-grid">
-            @foreach ($cities as $city => $count)
-                <a href="{{ route('jobs.index', ['location' => $city]) }}" class="city-card reveal">
-                    <span class="city-name">{{ $city }}</span>
-                    <span class="city-count">{{ number_format($count) }} {{ Str::plural('job', $count) }}</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-            @endforeach
         </div>
     </div>
 </section>
@@ -291,5 +287,34 @@
         </div>
     </div>
 </section>
+
+
+<script>
+/* Live-jobs / count-card animation (counts up once when scrolled into view) */
+(function () {
+    var els = document.querySelectorAll('.hh-num[data-hh-count]');
+    if (!els.length) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    function run(el) {
+        var target = parseInt(el.getAttribute('data-hh-count'), 10) || 0;
+        var dur = 1800, t0 = null;
+        function step(ts) {
+            if (t0 === null) t0 = ts;
+            var p = Math.min((ts - t0) / dur, 1);
+            el.textContent = Math.round(target * (1 - Math.pow(1 - p, 4))).toLocaleString('en-US');
+            if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+    }
+    els.forEach(function (el) { el.textContent = '0'; });
+
+    if (!('IntersectionObserver' in window)) { els.forEach(run); return; }
+    var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { run(e.target); io.unobserve(e.target); } });
+    }, { threshold: 0.35 });
+    els.forEach(function (el) { io.observe(el); });
+})();
+</script>
 
 @endsection
