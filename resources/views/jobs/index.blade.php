@@ -1,5 +1,7 @@
 @extends('layouts.home')
-
+<head>
+       <link rel="stylesheet" href="{{ asset('css/premium.css') }}">
+</head>
 @php
     $title = 'Jobs';
     if ($filters['q'] !== '') $title = $filters['q'] . ' jobs';
