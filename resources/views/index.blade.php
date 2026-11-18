@@ -84,7 +84,7 @@
 
         {{-- 3. Cities – one single row --}}
         <div class="hh-cities">
-            <span class="hh-cities-label"><i class="fa-solid fa-location-dot"></i><span>Jobs by city</span></span>
+            <span class="hh-cities-label"><i class="fa-solid fa-location-dot"></i><span>By city</span></span>
             <div class="hh-cities-track">
                 @foreach ($cities as $city => $count)
                     <a href="{{ route('jobs.index', ['location' => $city]) }}" class="hh-city">{{ $city }} <small>{{ number_format($count) }}</small></a>
@@ -102,9 +102,8 @@
         <div class="section-head reveal">
             <div>
                 <span class="eyebrow">Browse by field</span>
-                <h2>Pick where you want to <em>grow</em></h2>
             </div>
-            <a href="{{ route('jobs.index') }}" class="link-arrow">All categories <i class="fa-solid fa-arrow-right"></i></a>
+           
         </div>
 
         <div class="hcat-grid">
@@ -128,8 +127,8 @@
     <div class="container">
         <div class="section-head reveal">
             <div>
-                <span class="eyebrow">Fresh off the board</span>
-                <h2>Latest &amp; featured <em>jobs</em></h2>
+                <span class="eyebrow">Latest live jobs</span>
+
             </div>
             <a href="{{ route('jobs.index') }}" class="link-arrow">View all {{ number_format($stats['jobs']) }} jobs <i class="fa-solid fa-arrow-right"></i></a>
         </div>
@@ -222,12 +221,12 @@
     <div class="container">
         <div class="employer-card reveal">
             <div class="employer-copy">
-                <span class="eyebrow eyebrow--gold">For employers</span>
-                <h2>Hire your next great teammate, faster.</h2>
+                <span class="eyebrow eyebrow--gold">For Job seekers</span>
+                <h2>Register & Find your dream job</h2>
                 <ul class="checks">
-                    <li><i class="fa-solid fa-circle-check"></i> Post a job in about five minutes</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Reach active job seekers across Bangladesh</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Review every application in one dashboard</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Create account & Upload CV</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Search Jobs in dashboard</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Fiend your dream jobs</li>
                 </ul>
                 <div class="employer-actions">
                     <a href="{{ route('employer.register') }}" class="btn btn-gold">Post a job <i class="fa-solid fa-arrow-right"></i></a>
@@ -276,17 +275,6 @@
     </div>
 </section>
 
-{{-- ============================= FINAL CTA ============================= --}}
-<section class="final-cta">
-    <div class="container final-inner reveal">
-        <h2>Your next role is <em>one search</em> away.</h2>
-        <p>Join job seekers across Bangladesh finding work that fits.</p>
-        <div class="final-actions">
-            <a href="{{ route('register') }}" class="btn btn-gold btn-lg">Create free account</a>
-            <a href="{{ route('jobs.index') }}" class="btn btn-ghost btn-lg">Browse jobs</a>
-        </div>
-    </div>
-</section>
 
 
 <script>
