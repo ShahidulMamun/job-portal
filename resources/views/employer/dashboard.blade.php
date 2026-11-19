@@ -21,7 +21,7 @@
 
         body {
             font-family: 'Segoe UI', sans-serif;
-            background: #f4f6f9;
+            background: #f3f8f8;
             color: #444;
         }
 
@@ -35,7 +35,7 @@
             left: 0; top: 0;
             width: 260px;
             height: 100vh;
-            background: #2c4964;
+            background: #12213f;
             color: #fff;
             display: flex;
             flex-direction: column;
@@ -54,10 +54,10 @@
 
         .brand-icon {
             width: 42px; height: 42px;
-            background: #ffc451;
+            background: #1fc9bc;
             border-radius: 8px;
             display: flex; align-items: center; justify-content: center;
-            font-size: 20px; color: #2c4964;
+            font-size: 20px; color: #fff;
             font-weight: 700; flex-shrink: 0;
         }
 
@@ -96,15 +96,15 @@
         .nav-item i { width: 20px; text-align: center; font-size: 16px; }
 
         .nav-item:hover, .nav-item.active {
-            background: rgba(255,196,81,0.15);
-            color: #ffc451;
-            border-left-color: #ffc451;
+            background: rgba(31, 201, 188,0.15);
+            color: #1fc9bc;
+            border-left-color: #1fc9bc;
         }
 
         .badge {
             margin-left: auto;
-            background: #ffc451;
-            color: #2c4964;
+            background: #1fc9bc;
+            color: #fff;
             font-size: 11px;
             font-weight: 700;
             padding: 2px 8px;
@@ -124,10 +124,10 @@
 
         .user-avatar {
             width: 42px; height: 42px;
-            background: #ffc451;
+            background: #1fc9bc;
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            font-weight: 700; color: #2c4964; font-size: 16px;
+            font-weight: 700; color: #fff; font-size: 16px;
             flex-shrink: 0;
         }
 
@@ -161,27 +161,27 @@
         .hamburger {
             font-size: 20px;
             cursor: pointer;
-            color: #2c4964;
+            color: #12213f;
             display: none;
         }
 
-        .page-title { font-size: 20px; font-weight: 700; color: #2c4964; }
+        .page-title { font-size: 20px; font-weight: 700; color: #12213f; }
 
         .topbar-right { display: flex; align-items: center; gap: 20px; }
 
         .topbar-btn {
             width: 40px; height: 40px;
             border-radius: 50%;
-            background: #f4f6f9;
+            background: #f3f8f8;
             display: flex; align-items: center; justify-content: center;
             cursor: pointer;
             position: relative;
-            color: #2c4964;
+            color: #12213f;
             transition: all 0.2s;
             border: none;
         }
 
-        .topbar-btn:hover { background: #ffc451; color: #2c4964; }
+        .topbar-btn:hover { background: #1fc9bc; color: #fff; }
 
         .notif-dot {
             position: absolute;
@@ -199,10 +199,10 @@
 
         .topbar-avatar {
             width: 38px; height: 38px;
-            background: #2c4964;
+            background: #12213f;
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            color: #ffc451; font-weight: 700; font-size: 14px;
+            color: #1fc9bc; font-weight: 700; font-size: 14px;
         }
 
         /* ── Page Content ── */
@@ -215,7 +215,7 @@
 
         /* ── Welcome Banner ── */
         .welcome-banner {
-            background: linear-gradient(135deg, #2c4964 0%, #3d6b8f 100%);
+            background: linear-gradient(135deg, #12213f 0%, #1b2f57 100%);
             color: #fff;
             border-radius: 12px;
             padding: 30px 35px;
@@ -232,7 +232,7 @@
             position: absolute;
             right: -30px; top: -30px;
             width: 180px; height: 180px;
-            background: rgba(255,196,81,0.15);
+            background: rgba(31, 201, 188,0.15);
             border-radius: 50%;
         }
 
@@ -241,7 +241,7 @@
             position: absolute;
             right: 60px; bottom: -50px;
             width: 130px; height: 130px;
-            background: rgba(255,196,81,0.08);
+            background: rgba(31, 201, 188,0.08);
             border-radius: 50%;
         }
 
@@ -261,7 +261,7 @@
         .progress-ring {
             width: 70px; height: 70px;
             border-radius: 50%;
-            background: conic-gradient(#ffc451 75%, rgba(255,255,255,0.2) 0);
+            background: conic-gradient(#1fc9bc 75%, rgba(255,255,255,0.2) 0);
             display: flex; align-items: center; justify-content: center;
             margin: 0 auto 5px;
             position: relative;
@@ -271,7 +271,7 @@
             content: '';
             position: absolute;
             width: 52px; height: 52px;
-            background: #2c4964;
+            background: #162a4d;
             border-radius: 50%;
         }
 
@@ -308,13 +308,13 @@
             font-size: 22px; flex-shrink: 0;
         }
 
-        .icon-blue   { background: #e8f0fe; color: #2c4964; }
-        .icon-yellow { background: #fff8e1; color: #ffa000; }
+        .icon-blue   { background: #e8ecff; color: #3d5aff; }
+        .icon-yellow { background: #d5f6f3; color: #12a79b; }
         .icon-green  { background: #e8f5e9; color: #2e7d32; }
         .icon-red    { background: #fce4ec; color: #c62828; }
         .icon-purple { background: #f3e5f5; color: #6a1b9a; }
 
-        .stat-info h3 { font-size: 26px; font-weight: 700; color: #2c4964; }
+        .stat-info h3 { font-size: 26px; font-weight: 700; color: #12213f; }
         .stat-info p  { font-size: 13px; color: #888; margin-top: 2px; }
 
         /* ── Grid Layout ── */
@@ -337,12 +337,12 @@
             border-bottom: 1px solid #f0f0f0;
         }
 
-        .card-header h3 { font-size: 16px; font-weight: 700; color: #2c4964; }
+        .card-header h3 { font-size: 16px; font-weight: 700; color: #12213f; }
 
         .card-body { padding: 20px 25px; }
 
         .view-all {
-            font-size: 13px; color: #ffc451; font-weight: 600;
+            font-size: 13px; color: #12a79b; font-weight: 600;
             text-decoration: none;
         }
 
@@ -360,14 +360,14 @@
         .app-logo {
             width: 46px; height: 46px;
             border-radius: 10px;
-            background: #f4f6f9;
+            background: #f3f8f8;
             border: 1px solid #eee;
             display: flex; align-items: center; justify-content: center;
-            font-size: 18px; color: #2c4964; flex-shrink: 0;
+            font-size: 18px; color: #12213f; flex-shrink: 0;
         }
 
         .app-info { flex: 1; }
-        .app-info h4 { font-size: 15px; font-weight: 600; color: #2c4964; margin-bottom: 3px; }
+        .app-info h4 { font-size: 15px; font-weight: 600; color: #12213f; margin-bottom: 3px; }
         .app-info p  { font-size: 13px; color: #888; }
 
         .status-badge {
@@ -407,12 +407,12 @@
         .t-icon {
             width: 36px; height: 36px;
             border-radius: 50%;
-            background: #e8f0fe;
+            background: #e8ecff;
             display: flex; align-items: center; justify-content: center;
-            font-size: 14px; color: #2c4964; flex-shrink: 0;
+            font-size: 14px; color: #12213f; flex-shrink: 0;
         }
 
-        .t-content h4 { font-size: 14px; font-weight: 600; color: #2c4964; margin-bottom: 3px; }
+        .t-content h4 { font-size: 14px; font-weight: 600; color: #12213f; margin-bottom: 3px; }
         .t-content p  { font-size: 12px; color: #888; }
         .t-time        { font-size: 11px; color: #bbb; margin-top: 3px; }
 
@@ -427,12 +427,12 @@
             cursor: pointer;
         }
 
-        .saved-card:hover { border-color: #ffc451; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
-        .saved-card h4 { font-size: 15px; font-weight: 600; color: #2c4964; margin-bottom: 5px; }
+        .saved-card:hover { border-color: #1fc9bc; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        .saved-card h4 { font-size: 15px; font-weight: 600; color: #12213f; margin-bottom: 5px; }
         .saved-card .company { font-size: 13px; color: #888; margin-bottom: 10px; }
         .saved-meta { display: flex; gap: 10px; flex-wrap: wrap; }
         .saved-meta span { font-size: 12px; color: #888; display: flex; align-items: center; gap: 4px; }
-        .saved-meta i { color: #ffc451; }
+        .saved-meta i { color: #12a79b; }
 
         /* ── Profile ── */
         .profile-header {
@@ -440,7 +440,7 @@
             align-items: center;
             gap: 25px;
             padding: 30px 25px;
-            background: linear-gradient(135deg, #2c4964, #3d6b8f);
+            background: linear-gradient(135deg, #12213f, #1b2f57);
             color: #fff;
             border-radius: 12px;
             margin-bottom: 25px;
@@ -448,10 +448,10 @@
 
         .profile-big-avatar {
             width: 90px; height: 90px;
-            background: #ffc451;
+            background: #1fc9bc;
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            font-size: 36px; font-weight: 700; color: #2c4964;
+            font-size: 36px; font-weight: 700; color: #fff;
             border: 4px solid rgba(255,255,255,0.3);
             flex-shrink: 0;
         }
@@ -461,8 +461,8 @@
 
         .profile-edit-btn {
             margin-left: auto;
-            background: #ffc451;
-            color: #2c4964;
+            background: #1fc9bc;
+            color: #fff;
             padding: 10px 22px;
             border-radius: 6px;
             font-weight: 600;
@@ -472,7 +472,7 @@
             transition: all 0.2s;
         }
 
-        .profile-edit-btn:hover { background: #ffbb38; }
+        .profile-edit-btn:hover { background: #12a79b; }
 
         /* ── Form ── */
         .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -495,12 +495,12 @@
 
         .form-control:focus {
             outline: none;
-            border-color: #ffc451;
-            box-shadow: 0 0 0 3px rgba(255,196,81,0.15);
+            border-color: #1fc9bc;
+            box-shadow: 0 0 0 3px rgba(31, 201, 188,0.15);
         }
 
         .save-btn {
-            background: #2c4964;
+            background: #12213f;
             color: #fff;
             padding: 12px 30px;
             border-radius: 8px;
@@ -513,18 +513,18 @@
             font-size: 14px;
         }
 
-        .save-btn:hover { background: #ffc451; color: #2c4964; }
+        .save-btn:hover { background: #1fc9bc; color: #fff; }
 
         /* ── Progress Bars ── */
         .progress-item { margin-bottom: 18px; }
         .progress-item h4 {
-            font-size: 14px; font-weight: 600; color: #2c4964;
+            font-size: 14px; font-weight: 600; color: #12213f;
             margin-bottom: 8px; display: flex; justify-content: space-between;
         }
         .progress-bar { height: 8px; background: #f0f0f0; border-radius: 5px; overflow: hidden; }
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #2c4964, #ffc451);
+            background: linear-gradient(90deg, #1b2f57, #1fc9bc);
             border-radius: 5px;
         }
 
@@ -739,7 +739,7 @@
                     <div class="grid-3" style="margin-bottom:0">
                         <div class="saved-card">
                             <h4>React Developer</h4>
-                            <div class="company"><i class="fas fa-building" style="color:#ffc451;margin-right:5px"></i>NexTech Labs</div>
+                            <div class="company"><i class="fas fa-building" style="color:#12a79b;margin-right:5px"></i>NexTech Labs</div>
                             <div class="saved-meta">
                                 <span><i class="fas fa-map-marker-alt"></i>London</span>
                                 <span><i class="fas fa-clock"></i>Full Time</span>
@@ -748,7 +748,7 @@
                         </div>
                         <div class="saved-card">
                             <h4>Vue.js Engineer</h4>
-                            <div class="company"><i class="fas fa-building" style="color:#ffc451;margin-right:5px"></i>WebSoft Inc</div>
+                            <div class="company"><i class="fas fa-building" style="color:#12a79b;margin-right:5px"></i>WebSoft Inc</div>
                             <div class="saved-meta">
                                 <span><i class="fas fa-map-marker-alt"></i>Remote</span>
                                 <span><i class="fas fa-clock"></i>Full Time</span>
@@ -757,7 +757,7 @@
                         </div>
                         <div class="saved-card">
                             <h4>Node.js Backend Dev</h4>
-                            <div class="company"><i class="fas fa-building" style="color:#ffc451;margin-right:5px"></i>CloudBase Co</div>
+                            <div class="company"><i class="fas fa-building" style="color:#12a79b;margin-right:5px"></i>CloudBase Co</div>
                             <div class="saved-meta">
                                 <span><i class="fas fa-map-marker-alt"></i>Berlin</span>
                                 <span><i class="fas fa-clock"></i>Contract</span>
@@ -821,7 +821,7 @@
                     <div class="saved-grid">
                         <div class="saved-card">
                             <h4>React Developer</h4>
-                            <div class="company"><i class="fas fa-building" style="color:#ffc451;margin-right:5px"></i>NexTech Labs</div>
+                            <div class="company"><i class="fas fa-building" style="color:#12a79b;margin-right:5px"></i>NexTech Labs</div>
                             <div class="saved-meta">
                                 <span><i class="fas fa-map-marker-alt"></i>London</span>
                                 <span><i class="fas fa-clock"></i>Full Time</span>
@@ -830,7 +830,7 @@
                         </div>
                         <div class="saved-card">
                             <h4>Vue.js Engineer</h4>
-                            <div class="company"><i class="fas fa-building" style="color:#ffc451;margin-right:5px"></i>WebSoft Inc</div>
+                            <div class="company"><i class="fas fa-building" style="color:#12a79b;margin-right:5px"></i>WebSoft Inc</div>
                             <div class="saved-meta">
                                 <span><i class="fas fa-map-marker-alt"></i>Remote</span>
                                 <span><i class="fas fa-clock"></i>Full Time</span>
@@ -839,7 +839,7 @@
                         </div>
                         <div class="saved-card">
                             <h4>Node.js Developer</h4>
-                            <div class="company"><i class="fas fa-building" style="color:#ffc451;margin-right:5px"></i>CloudBase Co</div>
+                            <div class="company"><i class="fas fa-building" style="color:#12a79b;margin-right:5px"></i>CloudBase Co</div>
                             <div class="saved-meta">
                                 <span><i class="fas fa-map-marker-alt"></i>Berlin</span>
                                 <span><i class="fas fa-clock"></i>Contract</span>
@@ -848,7 +848,7 @@
                         </div>
                         <div class="saved-card">
                             <h4>Full Stack Developer</h4>
-                            <div class="company"><i class="fas fa-building" style="color:#ffc451;margin-right:5px"></i>DigitalMind</div>
+                            <div class="company"><i class="fas fa-building" style="color:#12a79b;margin-right:5px"></i>DigitalMind</div>
                             <div class="saved-meta">
                                 <span><i class="fas fa-map-marker-alt"></i>Toronto</span>
                                 <span><i class="fas fa-clock"></i>Full Time</span>
@@ -1028,9 +1028,9 @@
             <div class="card">
                 <div class="card-header"><h3>Upload CV / Resume</h3></div>
                 <div class="card-body">
-                    <div style="border:2px dashed #ffc451;border-radius:12px;padding:50px;text-align:center;cursor:pointer">
-                        <i class="fas fa-cloud-upload-alt" style="font-size:48px;color:#ffc451;margin-bottom:15px;display:block"></i>
-                        <h4 style="color:#2c4964;margin-bottom:8px">Drag & Drop your CV here</h4>
+                    <div style="border:2px dashed #1fc9bc;border-radius:12px;padding:50px;text-align:center;cursor:pointer">
+                        <i class="fas fa-cloud-upload-alt" style="font-size:48px;color:#1fc9bc;margin-bottom:15px;display:block"></i>
+                        <h4 style="color:#12213f;margin-bottom:8px">Drag & Drop your CV here</h4>
                         <p style="color:#888;font-size:14px">Supports PDF, DOC, DOCX (Max 5MB)</p>
                         <button class="save-btn" style="margin-top:20px"><i class="fas fa-upload"></i> Browse File</button>
                     </div>
@@ -1053,12 +1053,12 @@
                 </div>
                 <div class="card-body">
                     <div class="app-item">
-                        <div class="app-logo"><i class="fas fa-bell" style="color:#ffc451"></i></div>
+                        <div class="app-logo"><i class="fas fa-bell" style="color:#1fc9bc"></i></div>
                         <div class="app-info"><h4>Frontend Developer — React, JavaScript</h4><p>New York · Full Time · Daily alerts</p></div>
                         <span class="status-badge status-offered">Active</span>
                     </div>
                     <div class="app-item">
-                        <div class="app-logo"><i class="fas fa-bell" style="color:#ffc451"></i></div>
+                        <div class="app-logo"><i class="fas fa-bell" style="color:#1fc9bc"></i></div>
                         <div class="app-info"><h4>UI/UX Designer — Remote</h4><p>Worldwide · Remote · Weekly alerts</p></div>
                         <span class="status-badge status-offered">Active</span>
                     </div>
@@ -1090,16 +1090,16 @@
                     <div class="card-header"><h3>Notification Settings</h3></div>
                     <div class="card-body">
                         <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid #f5f5f5">
-                            <div><div style="font-weight:600;color:#2c4964;font-size:14px">Email Notifications</div><div style="font-size:12px;color:#888">Job alerts via email</div></div>
-                            <input type="checkbox" checked style="accent-color:#ffc451;width:18px;height:18px">
+                            <div><div style="font-weight:600;color:#12213f;font-size:14px">Email Notifications</div><div style="font-size:12px;color:#888">Job alerts via email</div></div>
+                            <input type="checkbox" checked style="accent-color:#12a79b;width:18px;height:18px">
                         </div>
                         <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid #f5f5f5">
-                            <div><div style="font-weight:600;color:#2c4964;font-size:14px">Application Updates</div><div style="font-size:12px;color:#888">Status changes</div></div>
-                            <input type="checkbox" checked style="accent-color:#ffc451;width:18px;height:18px">
+                            <div><div style="font-weight:600;color:#12213f;font-size:14px">Application Updates</div><div style="font-size:12px;color:#888">Status changes</div></div>
+                            <input type="checkbox" checked style="accent-color:#12a79b;width:18px;height:18px">
                         </div>
                         <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0">
-                            <div><div style="font-weight:600;color:#2c4964;font-size:14px">Profile Views</div><div style="font-size:12px;color:#888">When employers view your profile</div></div>
-                            <input type="checkbox" style="accent-color:#ffc451;width:18px;height:18px">
+                            <div><div style="font-weight:600;color:#12213f;font-size:14px">Profile Views</div><div style="font-size:12px;color:#888">When employers view your profile</div></div>
+                            <input type="checkbox" style="accent-color:#12a79b;width:18px;height:18px">
                         </div>
                         <button class="save-btn"><i class="fas fa-save"></i> Save Preferences</button>
                     </div>
