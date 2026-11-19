@@ -8,19 +8,19 @@
     --ink-2: #101f3d;
     --slate: #17284a;
     --cobalt: #3d5aff;
-    --gold: #f0ac2f;
-    --gold-deep: #d98f12;
-    --gold-ink: #a8650a;
-    --gold-soft: #fbe3ae;
-    --mint: #1fc596;
+    --gold: #1fc9bc;
+    --gold-deep: #12a79b;
+    --gold-ink: #0b7f77;
+    --gold-soft: #d5f6f3;
+    --mint: #2bd08f;
     --mint-soft: #dcf8ef;
     --rose: #e05c6b;
-    --paper: #f8f5ef;
-    --paper-2: #f1ece1;
+    --paper: #f3f8f8;
+    --paper-2: #e8f2f1;
     --white: #fff;
     --text: #1a2338;
     --muted: #667089;
-    --hairline: #e7e1d2;
+    --hairline: #dce8e7;
     --radius: 18px;
     --radius-sm: 12px;
     --shadow-sm:
@@ -174,8 +174,8 @@ select {
     color: var(--ink);
 }
 .btn-gold:hover {
-    background: #f5b942;
-    box-shadow: 0 14px 28px -8px rgba(240, 172, 47, 0.6);
+    background: #4fd9ce;
+    box-shadow: 0 14px 28px -8px rgba(31, 201, 188, 0.6);
 }
 .btn-ghost {
     background: #fff;
@@ -253,7 +253,7 @@ select {
     display: grid;
     place-items: center;
     font-size: 16px;
-    box-shadow: 0 6px 18px -4px rgba(240, 172, 47, 0.55);
+    box-shadow: 0 6px 18px -4px rgba(31, 201, 188, 0.55);
 }
 .brand-name {
     font-family: "Fraunces", serif;
@@ -334,7 +334,7 @@ select {
 .hero,
 .page-hero {
     position: relative;
-    background: linear-gradient(180deg, #fff 0%, #f1ece1 100%);
+    background: linear-gradient(180deg, #fff 0%, #e8f2f1 100%);
     color: var(--text);
 }
 .hero {
@@ -373,7 +373,7 @@ select {
 }
 .orb {
     display: none;
-} /* hero uses only white and #F1ECE1 */
+} /* hero uses only white and #e8f2f1 */
 .orb-1 {
     width: 720px;
     height: 720px;
@@ -393,7 +393,7 @@ select {
     top: -200px;
     background: radial-gradient(
         closest-side,
-        rgba(240, 172, 47, 0.3),
+        rgba(31, 201, 188, 0.3),
         transparent
     );
     animation: drift 22s ease-in-out infinite alternate-reverse;
@@ -897,7 +897,7 @@ select {
     border-radius: 50%;
     background: radial-gradient(
         closest-side,
-        rgba(240, 172, 47, 0.16),
+        rgba(31, 201, 188, 0.16),
         transparent
     );
     pointer-events: none;
@@ -1091,11 +1091,11 @@ select {
 .job-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-md);
-    border-color: #d6cfba;
+    border-color: #cfdcdb;
 }
 .job-card.is-featured {
-    border-color: rgba(240, 172, 47, 0.6);
-    background: linear-gradient(180deg, #fffaf0 0%, #fff 55%);
+    border-color: rgba(31, 201, 188, 0.6);
+    background: linear-gradient(180deg, #f0fbfa 0%, #fff 55%);
 }
 .job-card.is-featured::before {
     content: "";
@@ -1105,7 +1105,7 @@ select {
     top: -1px;
     height: 3px;
     border-radius: 0 0 4px 4px;
-    background: linear-gradient(90deg, var(--gold), #ffd27a);
+    background: linear-gradient(90deg, var(--gold), #7fe3da);
 }
 .job-card[hidden] {
     display: none;
@@ -1179,7 +1179,7 @@ select {
 }
 .badge-gold {
     background: var(--gold-soft);
-    color: #8a5a06;
+    color: #0b6f69;
 }
 .badge-mint {
     background: var(--mint-soft);
@@ -1336,7 +1336,7 @@ select {
     padding: 20px 22px;
     border-radius: var(--radius);
     color: var(--ink);
-    background: linear-gradient(140deg, #fff 0%, #f1ece1 100%);
+    background: linear-gradient(140deg, #fff 0%, #e8f2f1 100%);
     border: 1px solid var(--hairline);
     transition:
         transform 0.25s,
@@ -1403,7 +1403,7 @@ select {
     background: linear-gradient(
         180deg,
         var(--gold-deep),
-        rgba(240, 172, 47, 0.3)
+        rgba(31, 201, 188, 0.3)
     );
     -webkit-background-clip: text;
     background-clip: text;
@@ -1478,8 +1478,8 @@ select {
     align-items: center;
     padding: 64px;
     border-radius: 32px;
-    background: linear-gradient(135deg, #fff6df 0%, #fff 62%);
-    border: 1px solid #f1dfb2;
+    background: linear-gradient(135deg, #eefaf9 0%, #fff 62%);
+    border: 1px solid #bfeee9;
     color: var(--text);
     isolation: isolate;
 }
@@ -1493,7 +1493,7 @@ select {
     border-radius: 50%;
     background: radial-gradient(
         closest-side,
-        rgba(240, 172, 47, 0.28),
+        rgba(31, 201, 188, 0.28),
         transparent
     );
     z-index: -1;
@@ -1579,7 +1579,7 @@ select {
 }
 .faq details[open] {
     box-shadow: var(--shadow-sm);
-    border-color: #d6cfba;
+    border-color: #cfdcdb;
 }
 .faq summary {
     list-style: none;
@@ -1613,7 +1613,7 @@ select {
 
 /* ---------- Final CTA ---------- */
 .final-cta {
-    background: linear-gradient(135deg, #ffefc8 0%, #fbd98a 100%);
+    background: linear-gradient(135deg, #d9f8f5 0%, #a6ece6 100%);
     padding: 84px 0;
     text-align: center;
     position: relative;
@@ -1751,7 +1751,7 @@ select {
     text-align: center;
     padding: 64px 24px;
     background: #fff;
-    border: 1px dashed #d6cfba;
+    border: 1px dashed #cfdcdb;
     border-radius: 24px;
     display: flex;
     flex-direction: column;
@@ -1899,7 +1899,7 @@ select {
 }
 .check input:checked + span::before {
     background: var(--ink)
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.3l2.4 2.4 4.6-5' stroke='%23f0ac2f' stroke-width='1.9' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.3l2.4 2.4 4.6-5' stroke='%231fc9bc' stroke-width='1.9' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
         center / 13px no-repeat;
     border-color: var(--ink);
 }
@@ -2455,7 +2455,7 @@ a.pg:hover {
     cursor: pointer;
 }
 .header-search button:hover {
-    background: #f5b942;
+    background: #4fd9ce;
 }
 @media (min-width: 961px) {
     .site-header.show-search .header-search {
@@ -2609,7 +2609,7 @@ a.pg:hover {
     z-index: 30;
 }
 .hero-card--reg {
-    background: linear-gradient(180deg, #fff 0%, #f1ece1 100%);
+    background: linear-gradient(180deg, #fff 0%, #e8f2f1 100%);
 }
 .hc-badge {
     align-self: flex-start;
@@ -2693,7 +2693,7 @@ a.pg:hover {
     align-items: stretch;
     border-radius: 32px;
     border: 1px solid var(--hairline);
-    background: linear-gradient(135deg, #fff 0%, #f1ece1 100%);
+    background: linear-gradient(135deg, #fff 0%, #e8f2f1 100%);
     overflow: hidden;
 }
 .hirer-copy {
@@ -2745,8 +2745,8 @@ a.pg:hover {
 .cvdrop {
     display: block;
     padding: 16px 18px;
-    background: #fcfbf8;
-    border: 2px dashed #cdbf9d;
+    background: #f6fbfb;
+    border: 2px dashed #a9d9d5;
     border-radius: 18px;
     cursor: pointer;
     transition:
@@ -2762,8 +2762,8 @@ a.pg:hover {
 .cvdrop.is-over {
     border-color: var(--gold-deep);
     border-style: solid;
-    background: #fffaf0;
-    box-shadow: 0 0 0 6px rgba(240, 172, 47, 0.22);
+    background: #f0fbfa;
+    box-shadow: 0 0 0 6px rgba(31, 201, 188, 0.22);
 }
 .cvdrop [hidden] {
     display: none !important;
@@ -2934,4 +2934,92 @@ a.pg:hover {
 }
 :lang(bn) .job-heading h3 {
     line-height: 1.45;
+}
+
+/* ---------- Teal buttons: white text ---------- */
+.btn-gold,
+.btn-gold:hover,
+.header-search button,
+.job-card:hover .job-cta,
+.to-top:hover {
+    color: #fff;
+}
+.btn-gold {
+    font-weight: 700;
+}
+
+/* ---------- Recruiter desk illustration (partials/desk-art) – follows the teal palette ---------- */
+.desk-svg .ds-ink {
+    fill: var(--ink);
+}
+.desk-svg .ds-ink2 {
+    fill: var(--slate);
+}
+.desk-svg .ds-white {
+    fill: #fff;
+}
+.desk-svg .ds-card {
+    fill: #fff;
+    stroke: var(--hairline);
+    stroke-width: 1;
+}
+.desk-svg .ds-card-sh {
+    fill: #fff;
+    stroke: var(--hairline);
+    stroke-width: 1;
+    filter: drop-shadow(0 10px 14px rgba(10, 23, 48, 0.14));
+}
+.desk-svg .ds-paper {
+    fill: var(--paper);
+}
+.desk-svg .ds-paper2 {
+    fill: var(--paper-2);
+}
+.desk-svg .ds-line {
+    fill: var(--hairline);
+}
+.desk-svg .ds-soft {
+    fill: var(--gold-soft);
+    opacity: 0.55;
+}
+.desk-svg .ds-soft2 {
+    fill: var(--gold-soft);
+}
+.desk-svg .ds-gold {
+    fill: var(--gold);
+}
+.desk-svg .ds-gold-deep {
+    fill: var(--gold-deep);
+}
+.desk-svg .ds-gold-soft {
+    fill: var(--gold-soft);
+}
+.desk-svg .ds-mint {
+    fill: var(--mint);
+}
+.desk-svg .ds-mint-soft {
+    fill: var(--mint-soft);
+}
+.desk-svg .ds-rose {
+    fill: var(--rose);
+}
+.desk-svg .ds-stroke-w {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.desk-svg .ds-stroke-m {
+    fill: none;
+    stroke: var(--mint);
+    stroke-width: 2.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.desk-svg .ds-stroke-g {
+    fill: none;
+    stroke: var(--gold);
+    stroke-width: 5;
+    stroke-linecap: round;
 }
