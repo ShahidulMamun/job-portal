@@ -11,20 +11,20 @@
 
 <style>
   :root {
-    --ink: #0a1730;
-    --ink-2: #101f3d;
-    --slate: #17284a;
+    --ink: #12213f;
+    --ink-2: #1b2f57;
+    --slate: #1b2f57;
     --cobalt: #3d5aff;
-    --gold: #f0ac2f;
-    --gold-soft: #fbe3ae;
-    --mint: #23d9a6;
+    --gold: #1fc9bc;
+    --gold-soft: #d5f6f3;
+    --mint: #2bd08f;
     --rose: #e05c6b;
-    --paper: #f8f5ef;
-    --paper-2: #f1ece1;
+    --paper: #f3f8f8;
+    --paper-2: #e8f2f1;
     --ink-text: #1a2338;
     --muted: #6f7891;
     --muted-on-dark: rgba(232,234,244,0.58);
-    --hairline: #e7e1d2;
+    --hairline: #dce8e7;
   }
 
   * { box-sizing: border-box; }
@@ -61,8 +61,8 @@
   .sidebar-logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 19px; color: #fff; margin-bottom: 34px; padding: 0 6px; }
   .sidebar-logo i {
     width: 34px; height: 34px; border-radius: 9px;
-    background: linear-gradient(150deg, var(--gold), #e08d1f);
-    color: var(--ink);
+    background: linear-gradient(150deg, var(--gold), #12a79b);
+    color: #fff;
     display: flex; align-items: center; justify-content: center; font-size: 15px;
   }
 
@@ -85,13 +85,13 @@
   }
   .side-nav a i { width: 18px; text-align: center; font-size: 15px; }
   .side-nav a:hover { background: rgba(255,255,255,0.06); color: #fff; }
-  .side-nav a.active { background: rgba(240,172,47,0.12); color: var(--gold); }
+  .side-nav a.active { background: rgba(31,201,188,0.14); color: var(--gold); }
   .side-nav a.active::before {
     content: ""; position: absolute; left: -20px; top: 50%; transform: translateY(-50%);
     width: 3px; height: 20px; border-radius: 3px; background: var(--gold);
   }
   .side-nav .badge-count {
-    margin-left: auto; background: var(--cobalt); color: #fff;
+    margin-left: auto; background: var(--gold); color: #fff;
     font-size: 10.5px; font-weight: 700; padding: 2px 7px; border-radius: 999px;
     font-family: 'JetBrains Mono', monospace;
   }
@@ -102,7 +102,7 @@
   }
   .sidebar-profile .avatar {
     width: 38px; height: 38px; border-radius: 50%;
-    background: linear-gradient(150deg, var(--cobalt), #6c86ff);
+    background: linear-gradient(150deg, var(--gold), #12a79b);
     color: #fff; font-weight: 700; font-size: 14px;
     display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     overflow: hidden;
@@ -132,7 +132,7 @@
     color: var(--ink); font-size: 15px; cursor: pointer;
     transition: background .2s ease, border-color .2s ease;
   }
-  .icon-btn:hover { background: #fff; border-color: var(--cobalt); }
+  .icon-btn:hover { background: #fff; border-color: var(--gold); }
   .icon-btn .dot {
     position: absolute; top: 8px; right: 9px;
     width: 7px; height: 7px; border-radius: 50%; background: var(--rose);
@@ -145,7 +145,7 @@
   /* ===== WELCOME BANNER ===== */
   .welcome-card {
     position: relative;
-    background: radial-gradient(ellipse 700px 260px at 90% -30%, #1a2f57, var(--ink) 70%);
+    background: radial-gradient(ellipse 700px 260px at 90% -30%, #1f3763, var(--ink) 70%);
     border-radius: 20px;
     padding: 30px 34px;
     color: #fff;
@@ -189,8 +189,8 @@
     display: flex; align-items: center; justify-content: center; font-size: 17px;
   }
   .stat-card .stat-icon.cobalt { background: rgba(61,90,255,0.1); color: var(--cobalt); }
-  .stat-card .stat-icon.mint { background: rgba(35,217,166,0.12); color: #0f9d79; }
-  .stat-card .stat-icon.gold { background: var(--gold-soft); color: #93650a; }
+  .stat-card .stat-icon.mint { background: rgba(43,208,143,0.12); color: #0f9d79; }
+  .stat-card .stat-icon.gold { background: var(--gold-soft); color: #0b7f77; }
   .stat-card .stat-icon.rose { background: rgba(224,92,107,0.12); color: var(--rose); }
   .stat-card .stat-value { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 700; color: var(--ink); line-height: 1.1; }
   .stat-card .stat-label { font-size: 12px; color: var(--muted); margin-top: 2px; }
@@ -204,8 +204,8 @@
   }
   .panel-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
   .panel-header h2 { font-size: 15.5px; font-weight: 600; color: var(--ink); margin: 0; display: flex; align-items: center; gap: 9px; }
-  .panel-header h2 i { color: var(--cobalt); font-size: 14px; }
-  .panel-header .view-all { font-size: 12.5px; font-weight: 600; color: var(--cobalt); }
+  .panel-header h2 i { color: #12a79b; font-size: 14px; }
+  .panel-header .view-all { font-size: 12.5px; font-weight: 600; color: #0b7f77; }
 
   /* applications table */
   .app-table { width: 100%; border-collapse: collapse; }
@@ -219,7 +219,7 @@
   .app-table .job-logo {
     width: 34px; height: 34px; border-radius: 9px; flex-shrink: 0;
     background: var(--paper-2); display: flex; align-items: center; justify-content: center;
-    color: var(--cobalt); font-size: 13px; font-weight: 700;
+    color: #12a79b; font-size: 13px; font-weight: 700;
   }
   .app-table .job-title { font-weight: 600; color: var(--ink); font-size: 13px; }
   .app-table .job-company { font-size: 11.5px; color: var(--muted); }
@@ -229,9 +229,9 @@
     display: inline-flex; align-items: center; gap: 5px;
     font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 999px;
   }
-  .status-pill.pending { background: var(--gold-soft); color: #8a5c07; }
+  .status-pill.pending { background: #fdf0d3; color: #8a5c07; }
   .status-pill.reviewed { background: rgba(61,90,255,0.1); color: var(--cobalt); }
-  .status-pill.shortlisted { background: rgba(35,217,166,0.12); color: #0f9d79; }
+  .status-pill.shortlisted { background: rgba(43,208,143,0.12); color: #0f9d79; }
   .status-pill.rejected { background: rgba(224,92,107,0.12); color: var(--rose); }
 
   .empty-state { text-align: center; padding: 30px 10px; color: var(--muted); font-size: 13px; }
@@ -246,7 +246,7 @@
   .job-rec-card .job-logo {
     width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
     background: var(--paper-2); display: flex; align-items: center; justify-content: center;
-    color: var(--cobalt); font-size: 14px; font-weight: 700;
+    color: #12a79b; font-size: 14px; font-weight: 700;
   }
   .job-rec-card .job-rec-info { flex: 1; min-width: 0; }
   .job-rec-card h4 { margin: 0 0 3px; font-size: 13.5px; font-weight: 600; color: var(--ink); }
@@ -267,8 +267,8 @@
     background: var(--paper); color: var(--ink); font-size: 13px; font-weight: 600;
     transition: border-color .2s ease, background .2s ease;
   }
-  .quick-action-btn:hover { border-color: var(--cobalt); background: #fff; }
-  .quick-action-btn i { width: 20px; text-align: center; color: var(--cobalt); }
+  .quick-action-btn:hover { border-color: var(--gold); background: #fff; }
+  .quick-action-btn i { width: 20px; text-align: center; color: #12a79b; }
 
   /* profile checklist */
   .checklist-item {
@@ -280,7 +280,7 @@
     width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;
     display: flex; align-items: center; justify-content: center; font-size: 10px;
   }
-  .checklist-item .check-icon.done { background: rgba(35,217,166,0.15); color: #0f9d79; }
+  .checklist-item .check-icon.done { background: rgba(43,208,143,0.15); color: #0f9d79; }
   .checklist-item .check-icon.pending { background: var(--paper-2); color: var(--muted); border: 1.5px solid var(--hairline); }
   .checklist-item.done span { color: var(--muted); text-decoration: line-through; }
 
@@ -488,7 +488,7 @@
               <div class="empty-state">
                 <i class="fas fa-inbox"></i>
                 You haven't applied to any jobs yet.<br>
-                <a href="{{ route('candidate.jobs.index') }}" style="color:var(--cobalt); font-weight:600;">Browse open jobs →</a>
+                <a href="{{ route('candidate.jobs.index') }}" style="color:#0b7f77; font-weight:600;">Browse open jobs →</a>
               </div>
             @endif
           </div>
