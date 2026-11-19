@@ -84,7 +84,7 @@
 
         {{-- 3. Cities – one single row --}}
         <div class="hh-cities">
-            <span class="hh-cities-label"><i class="fa-solid fa-location-dot"></i><span>By city</span></span>
+            <span class="hh-cities-label"><i class="fa-solid fa-location-dot"></i><span>By City</span></span>
             <div class="hh-cities-track">
                 @foreach ($cities as $city => $count)
                     <a href="{{ route('jobs.index', ['location' => $city]) }}" class="hh-city">{{ $city }} <small>{{ number_format($count) }}</small></a>
@@ -102,8 +102,9 @@
         <div class="section-head reveal">
             <div>
                 <span class="eyebrow">Browse by field</span>
+             
             </div>
-           
+          
         </div>
 
         <div class="hcat-grid">
@@ -127,8 +128,8 @@
     <div class="container">
         <div class="section-head reveal">
             <div>
-                <span class="eyebrow">Latest live jobs</span>
-
+                <span class="eyebrow">Fresh off the board</span>
+                {{-- <h2>Latest &amp; featured <em>jobs</em></h2> --}}
             </div>
             <a href="{{ route('jobs.index') }}" class="link-arrow">View all {{ number_format($stats['jobs']) }} jobs <i class="fa-solid fa-arrow-right"></i></a>
         </div>
@@ -216,36 +217,6 @@
 </section>
 @endif
 
-{{-- ============================= EMPLOYER CTA ============================= --}}
-<section class="section section--tight" id="employers">
-    <div class="container">
-        <div class="employer-card reveal">
-            <div class="employer-copy">
-                <span class="eyebrow eyebrow--gold">For Job seekers</span>
-                <h2>Register & Find your dream job</h2>
-                <ul class="checks">
-                    <li><i class="fa-solid fa-circle-check"></i> Create account & Upload CV</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Search Jobs in dashboard</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Fiend your dream jobs</li>
-                </ul>
-                <div class="employer-actions">
-                    <a href="{{ route('employer.register') }}" class="btn btn-gold">Post a job <i class="fa-solid fa-arrow-right"></i></a>
-                    <a href="{{ route('employer.login') }}" class="btn btn-ghost">Employer login</a>
-                </div>
-            </div>
-            <div class="employer-visual" aria-hidden="true">
-                @foreach ($liveJobs as $lj)
-                    <div class="mini-job" style="--i: {{ $loop->index }}">
-                        <span class="mini-dot"></span>
-                        <div><strong>{{ Str::limit($lj->job_title, 28) }}</strong><small>{{ Str::limit($lj->company_name, 26) }}</small></div>
-                        <i class="fa-solid fa-check"></i>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
-</section>
-
 {{-- ============================= FAQ ============================= --}}
 <section class="section section--tint" id="faq">
     <div class="container container--narrow">
@@ -274,6 +245,7 @@
         </div>
     </div>
 </section>
+
 
 
 

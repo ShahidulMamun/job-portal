@@ -4,7 +4,7 @@
    LivejobsBD – HOME PAGE stylesheet (single file)
    = premium base (header, buttons, search box, cards, footer, sections)
    + home hero (search → count cards → cities row)
-   Load only on the home page. Other pages keep their own css files.
+   Contains only what the home page uses.
    ========================================================================== */
 
 /* ==========================================================================
@@ -17,19 +17,19 @@
     --ink-2: #101f3d;
     --slate: #17284a;
     --cobalt: #3d5aff;
-    --gold: #f0ac2f;
-    --gold-deep: #d98f12;
-    --gold-ink: #a8650a;
-    --gold-soft: #fbe3ae;
-    --mint: #1fc596;
+    --gold: #1fc9bc;
+    --gold-deep: #12a79b;
+    --gold-ink: #0b7f77;
+    --gold-soft: #d5f6f3;
+    --mint: #2bd08f;
     --mint-soft: #dcf8ef;
     --rose: #e05c6b;
-    --paper: #f8f5ef;
-    --paper-2: #f1ece1;
+    --paper: #f3f8f8;
+    --paper-2: #e8f2f1;
     --white: #fff;
     --text: #1a2338;
     --muted: #667089;
-    --hairline: #e7e1d2;
+    --hairline: #dce8e7;
     --radius: 18px;
     --radius-sm: 12px;
     --shadow-sm:
@@ -183,8 +183,8 @@ select {
     color: var(--ink);
 }
 .btn-gold:hover {
-    background: #f5b942;
-    box-shadow: 0 14px 28px -8px rgba(240, 172, 47, 0.6);
+    background: #4fd9ce;
+    box-shadow: 0 14px 28px -8px rgba(31, 201, 188, 0.6);
 }
 .btn-ghost {
     background: #fff;
@@ -262,7 +262,7 @@ select {
     display: grid;
     place-items: center;
     font-size: 16px;
-    box-shadow: 0 6px 18px -4px rgba(240, 172, 47, 0.55);
+    box-shadow: 0 6px 18px -4px rgba(31, 201, 188, 0.55);
 }
 .brand-name {
     font-family: "Fraunces", serif;
@@ -340,17 +340,8 @@ select {
 }
 
 /* ---------- Hero ---------- */
-.hero,
-.page-hero {
-    position: relative;
-    background: linear-gradient(180deg, #fff 0%, #f1ece1 100%);
-    color: var(--text);
-}
 .section--cats {
     padding: 60px 0 44px;
-}
-.page-hero {
-    padding: calc(var(--header-h) + 36px) 0 44px;
 }
 .hero-bg {
     position: absolute;
@@ -377,43 +368,7 @@ select {
         transparent 78%
     );
 }
-.orb {
-    display: none;
-} /* hero uses only white and #F1ECE1 */
-.orb-1 {
-    width: 720px;
-    height: 720px;
-    left: -220px;
-    top: -300px;
-    background: radial-gradient(
-        closest-side,
-        rgba(61, 90, 255, 0.15),
-        transparent
-    );
-    animation: drift 18s ease-in-out infinite alternate;
-}
-.orb-2 {
-    width: 680px;
-    height: 680px;
-    right: -200px;
-    top: -200px;
-    background: radial-gradient(
-        closest-side,
-        rgba(240, 172, 47, 0.3),
-        transparent
-    );
-    animation: drift 22s ease-in-out infinite alternate-reverse;
-}
-@keyframes drift {
-    to {
-        transform: translate(60px, 40px) scale(1.12);
-    }
-}
 
-.hero-inner {
-    position: relative;
-    text-align: center;
-}
 .sr-only {
     position: absolute;
     width: 1px;
@@ -799,32 +754,6 @@ select {
 .section--tint {
     background: var(--paper-2);
 }
-.section--soft {
-    background: linear-gradient(180deg, var(--paper) 0%, #fff 100%);
-    position: relative;
-    overflow: hidden;
-}
-.section--soft::before {
-    content: "";
-    position: absolute;
-    width: 640px;
-    height: 640px;
-    right: -240px;
-    top: -300px;
-    border-radius: 50%;
-    background: radial-gradient(
-        closest-side,
-        rgba(240, 172, 47, 0.16),
-        transparent
-    );
-    pointer-events: none;
-}
-.section--soft h2 {
-    color: var(--ink);
-}
-.section--soft h2 em {
-    color: var(--gold-ink);
-}
 .section-head {
     display: flex;
     align-items: flex-end;
@@ -865,73 +794,6 @@ select {
 }
 
 /* ---------- Categories ---------- */
-.cat-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-}
-.cat-card {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 22px;
-    background: #fff;
-    border: 1px solid var(--hairline);
-    border-radius: var(--radius);
-    transition:
-        transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
-        box-shadow 0.25s,
-        border-color 0.25s;
-    position: relative;
-}
-.cat-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--gold);
-}
-.cat-icon {
-    width: 52px;
-    height: 52px;
-    flex: none;
-    border-radius: 15px;
-    background: #fffefc;
-    color: var(--gold-ink);
-    display: grid;
-    place-items: center;
-    font-size: 20px;
-    transition: transform 0.3s;
-}
-.cat-card:hover .cat-icon {
-    transform: rotate(-8deg) scale(1.06);
-}
-.cat-body {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    flex: 1;
-}
-.cat-body strong {
-    font-weight: 600;
-    font-size: 16px;
-    color: var(--ink);
-    line-height: 1.25;
-}
-.cat-body small {
-    color: var(--muted);
-    font-size: 13px;
-    margin-top: 2px;
-}
-.cat-card .go {
-    color: var(--gold-deep);
-    font-size: 13px;
-    opacity: 0;
-    transform: translateX(-6px);
-    transition: 0.25s;
-}
-.cat-card:hover .go {
-    opacity: 1;
-    transform: none;
-}
 
 /* ---------- Tabs ---------- */
 .tabs {
@@ -982,11 +844,6 @@ select {
 }
 
 /* ---------- Job cards ---------- */
-.job-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
 .job-list {
     display: grid;
     gap: 16px;
@@ -1008,11 +865,11 @@ select {
 .job-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-md);
-    border-color: #d6cfba;
+    border-color: #cfdcdb;
 }
 .job-card.is-featured {
-    border-color: rgba(240, 172, 47, 0.6);
-    background: linear-gradient(180deg, #fffaf0 0%, #fff 55%);
+    border-color: rgba(31, 201, 188, 0.6);
+    background: linear-gradient(180deg, #f0fbfa 0%, #fff 55%);
 }
 .job-card.is-featured::before {
     content: "";
@@ -1022,7 +879,7 @@ select {
     top: -1px;
     height: 3px;
     border-radius: 0 0 4px 4px;
-    background: linear-gradient(90deg, var(--gold), #ffd27a);
+    background: linear-gradient(90deg, var(--gold), #7fe3da);
 }
 .job-card[hidden] {
     display: none;
@@ -1096,7 +953,7 @@ select {
 }
 .badge-gold {
     background: var(--gold-soft);
-    color: #8a5a06;
+    color: #0b6f69;
 }
 .badge-mint {
     background: var(--mint-soft);
@@ -1238,57 +1095,6 @@ select {
 }
 
 /* ---------- Steps ---------- */
-.steps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-    position: relative;
-}
-.step {
-    background: #fff;
-    border: 1px solid var(--hairline);
-    border-radius: 22px;
-    padding: 34px 30px;
-    box-shadow: var(--shadow-sm);
-    transition:
-        transform 0.25s,
-        border-color 0.25s,
-        box-shadow 0.25s;
-    position: relative;
-}
-.step:hover {
-    transform: translateY(-4px);
-    border-color: var(--gold);
-    box-shadow: var(--shadow-md);
-}
-.step-no {
-    font-family: "Fraunces", serif;
-    font-size: 54px;
-    font-weight: 600;
-    line-height: 1;
-    background: linear-gradient(
-        180deg,
-        var(--gold-deep),
-        rgba(240, 172, 47, 0.3)
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    display: block;
-    margin-bottom: 18px;
-}
-.step h3 {
-    color: var(--ink);
-    font-size: 23px;
-    margin-bottom: 10px;
-}
-.step p {
-    color: var(--muted);
-    font-size: 15.5px;
-}
-.section--soft .center-cta {
-    position: relative;
-}
 
 /* ---------- Companies ---------- */
 .company-grid {
@@ -1344,8 +1150,8 @@ select {
     align-items: center;
     padding: 64px;
     border-radius: 32px;
-    background: linear-gradient(135deg, #fff6df 0%, #fff 62%);
-    border: 1px solid #f1dfb2;
+    background: linear-gradient(135deg, #eefaf9 0%, #fff 62%);
+    border: 1px solid #bfeee9;
     color: var(--text);
     isolation: isolate;
 }
@@ -1359,7 +1165,7 @@ select {
     border-radius: 50%;
     background: radial-gradient(
         closest-side,
-        rgba(240, 172, 47, 0.28),
+        rgba(31, 201, 188, 0.28),
         transparent
     );
     z-index: -1;
@@ -1445,7 +1251,7 @@ select {
 }
 .faq details[open] {
     box-shadow: var(--shadow-sm);
-    border-color: #d6cfba;
+    border-color: #cfdcdb;
 }
 .faq summary {
     list-style: none;
@@ -1479,7 +1285,7 @@ select {
 
 /* ---------- Final CTA ---------- */
 .final-cta {
-    background: linear-gradient(135deg, #ffefc8 0%, #fbd98a 100%);
+    background: linear-gradient(135deg, #d9f8f5 0%, #a6ece6 100%);
     padding: 84px 0;
     text-align: center;
     position: relative;
@@ -1617,7 +1423,7 @@ select {
     text-align: center;
     padding: 64px 24px;
     background: #fff;
-    border: 1px dashed #d6cfba;
+    border: 1px dashed #cfdcdb;
     border-radius: 24px;
     display: flex;
     flex-direction: column;
@@ -1635,13 +1441,6 @@ select {
     color: var(--muted);
     max-width: 46ch;
     margin-bottom: 8px;
-}
-.empty-chips {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 14px;
 }
 
 /* ---------- Scroll reveal (progressive enhancement) ---------- */
@@ -1661,15 +1460,6 @@ select {
 /* ==========================================================================
    Responsive
    ========================================================================== */
-@media (max-width: 1080px) {
-    .job-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .cat-grid,
-    .company-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
 
 @media (max-width: 960px) {
     :root {
@@ -1740,9 +1530,6 @@ select {
         top: calc(100% + 6px);
     }
 
-    .steps {
-        grid-template-columns: 1fr;
-    }
     .employer-card {
         grid-template-columns: 1fr;
         padding: 44px 32px;
@@ -1765,22 +1552,6 @@ select {
 @media (max-width: 760px) {
     .container {
         padding: 0 18px;
-    }
-    .job-grid {
-        grid-template-columns: 1fr;
-    }
-    .cat-grid,
-    .company-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-    }
-    .cat-card {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 18px;
-    }
-    .cat-card .go {
-        display: none;
     }
     .section-head {
         flex-direction: column;
@@ -1913,7 +1684,7 @@ select {
     cursor: pointer;
 }
 .header-search button:hover {
-    background: #f5b942;
+    background: #4fd9ce;
 }
 @media (min-width: 961px) {
     .site-header.show-search .header-search {
@@ -2056,7 +1827,7 @@ select {
     align-items: stretch;
     border-radius: 32px;
     border: 1px solid var(--hairline);
-    background: linear-gradient(135deg, #fff 0%, #f1ece1 100%);
+    background: linear-gradient(135deg, #fff 0%, #e8f2f1 100%);
     overflow: hidden;
 }
 .hirer-copy {
@@ -2190,7 +1961,7 @@ select {
    ========================================================================== */
 .hh {
     position: relative;
-    background: linear-gradient(180deg, #fff 0%, #f1ece1 100%);
+    background: linear-gradient(180deg, #fff 0%, #e8f2f1 100%);
     /* header is fixed, so top padding = header height + small gap */
     padding: calc(var(--header-h) + 22px) 0 24px;
 }
@@ -2496,4 +2267,199 @@ select {
     .hh-live i {
         animation: none;
     }
+}
+
+/* ---------- Job-seeker CTA: dark variant so it differs from the light recruiter card ---------- */
+.employer-card--seeker {
+    background: linear-gradient(135deg, #0a1730 0%, #17284a 100%);
+    border-color: var(--ink);
+    color: #e8eaf4;
+}
+.employer-card--seeker::before {
+    background: radial-gradient(
+        closest-side,
+        rgba(31, 201, 188, 0.22),
+        transparent
+    );
+}
+.employer-card--seeker h2 {
+    color: #fff;
+}
+.employer-card--seeker .eyebrow {
+    color: var(--gold);
+}
+.employer-card--seeker .checks {
+    color: #d6daea;
+}
+
+/* ---------- Search box: no "What / Where / Field" labels, no "/" hint, no EN toggle ---------- */
+.hh .sbox-input label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+} /* hidden visually, still read by screen readers */
+.hh .sbox-kbd,
+.hh .sbox-lang {
+    display: none !important;
+}
+.hh .sbox-input input,
+.hh .sbox-input select {
+    padding-top: 0;
+}
+
+/* ---------- Sleeker search box ---------- */
+.hh .sbox {
+    padding: 5px;
+    border-radius: 999px;
+    box-shadow:
+        0 12px 32px -14px rgba(10, 23, 48, 0.25),
+        0 0 0 1px var(--hairline);
+    transition: box-shadow 0.25s;
+}
+.hh .sbox:focus-within {
+    box-shadow:
+        0 16px 38px -14px rgba(18, 167, 155, 0.38),
+        0 0 0 1.5px var(--gold);
+}
+.hh .sbox-field {
+    padding: 4px 18px;
+    border-radius: 999px;
+}
+.hh .sbox-field:focus-within {
+    background: transparent;
+}
+.hh .sbox-field .lead {
+    font-size: 15px;
+    width: 18px;
+}
+.hh .sbox-input input,
+.hh .sbox-input select {
+    font-size: 15px;
+    height: 40px;
+}
+.hh .sbox-submit {
+    border-radius: 999px;
+    padding: 0 26px;
+    font-size: 15px;
+    min-height: 44px;
+    margin-left: 6px;
+}
+@media (max-width: 960px) {
+    .hh .sbox {
+        border-radius: 22px;
+        padding: 6px;
+    }
+    .hh .sbox-field {
+        border-radius: 16px;
+        padding: 2px 14px;
+    }
+    .hh .sbox-input input,
+    .hh .sbox-input select {
+        height: 44px;
+    }
+    .hh .sbox-submit {
+        border-radius: 16px;
+        margin: 6px 0 0;
+        width: 100%;
+    }
+}
+
+/* ---------- Teal buttons: white text ---------- */
+.btn-gold,
+.btn-gold:hover,
+.sbox-submit,
+.header-search button,
+.job-card:hover .job-cta,
+.to-top:hover,
+.hh-city:hover {
+    color: #fff;
+}
+.hh-city:hover small {
+    background: rgba(255, 255, 255, 0.22);
+    color: #fff;
+}
+.btn-gold {
+    font-weight: 700;
+}
+
+/* ---------- Recruiter desk illustration (partials/desk-art) – follows the teal palette ---------- */
+.desk-svg .ds-ink {
+    fill: var(--ink);
+}
+.desk-svg .ds-ink2 {
+    fill: var(--slate);
+}
+.desk-svg .ds-white {
+    fill: #fff;
+}
+.desk-svg .ds-card {
+    fill: #fff;
+    stroke: var(--hairline);
+    stroke-width: 1;
+}
+.desk-svg .ds-card-sh {
+    fill: #fff;
+    stroke: var(--hairline);
+    stroke-width: 1;
+    filter: drop-shadow(0 10px 14px rgba(10, 23, 48, 0.14));
+}
+.desk-svg .ds-paper {
+    fill: var(--paper);
+}
+.desk-svg .ds-paper2 {
+    fill: var(--paper-2);
+}
+.desk-svg .ds-line {
+    fill: var(--hairline);
+}
+.desk-svg .ds-soft {
+    fill: var(--gold-soft);
+    opacity: 0.55;
+}
+.desk-svg .ds-soft2 {
+    fill: var(--gold-soft);
+}
+.desk-svg .ds-gold {
+    fill: var(--gold);
+}
+.desk-svg .ds-gold-deep {
+    fill: var(--gold-deep);
+}
+.desk-svg .ds-gold-soft {
+    fill: var(--gold-soft);
+}
+.desk-svg .ds-mint {
+    fill: var(--mint);
+}
+.desk-svg .ds-mint-soft {
+    fill: var(--mint-soft);
+}
+.desk-svg .ds-rose {
+    fill: var(--rose);
+}
+.desk-svg .ds-stroke-w {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.desk-svg .ds-stroke-m {
+    fill: none;
+    stroke: var(--mint);
+    stroke-width: 2.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.desk-svg .ds-stroke-g {
+    fill: none;
+    stroke: var(--gold);
+    stroke-width: 5;
+    stroke-linecap: round;
 }
