@@ -1,8 +1,8 @@
 <header class="site-header" id="siteHeader">
     <div class="container header-inner">
         <a href="{{ url('/') }}" class="brand" aria-label="LivejobsBD home">
-            <span class="brand-mark"><i class="fa-solid fa-briefcase"></i></span>
-            <span class="brand-name">Livejobs<b>BD</b></span>
+            <img class="p-0" src="{{asset('assets/img/logo.png')}}"  height="80px">
+            <span class="brand-name p-0">Livejobs<b>BD</b></span>
         </a>
 
         <form class="header-search" action="{{ route('jobs.index') }}" method="GET" role="search">
