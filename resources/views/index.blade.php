@@ -222,7 +222,7 @@
     <div class="container container--narrow">
         <div class="section-head section-head--center reveal">
             <span class="eyebrow">Good to know</span>
-            <h2>Questions, <em>answered</em></h2>
+            <h2>Questions and answered</h2>
         </div>
 
         <div class="faq reveal">

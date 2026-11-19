@@ -2463,3 +2463,162 @@ select {
     stroke-width: 5;
     stroke-linecap: round;
 }
+
+/* ==========================================================================
+   Compact category cards + teal-outlined tabs / Browse all jobs button
+   ========================================================================== */
+.section--cats {
+    padding: 24px 0 26px;
+}
+.section--cats .section-head {
+    margin-bottom: 14px;
+}
+.hcat-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 8px;
+}
+.hcat {
+    gap: 10px;
+    padding: 8px 11px;
+    border: 1.5px solid #12a79b;
+    border-radius: 12px;
+    background: #fff;
+}
+.hcat:hover {
+    border-color: #12a79b;
+    background: var(--gold-soft);
+    box-shadow: 0 6px 14px -8px rgba(18, 167, 155, 0.6);
+    transform: translateY(-1px);
+}
+.hcat-ico {
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    font-size: 13px;
+    background: var(--gold-soft);
+    border: 0;
+    color: #12a79b;
+}
+.hcat-txt strong {
+    font-size: 13.5px;
+    line-height: 1.2;
+}
+.hcat-txt small {
+    font-size: 11.5px;
+}
+
+/* "Fresh off the board" tabs */
+.tabs button {
+    background: #fff;
+    border: 1.5px solid #12a79b;
+    color: #0b7f77;
+}
+.tabs button i {
+    color: #12a79b;
+}
+.tabs button:hover {
+    background: var(--gold-soft);
+    border-color: #12a79b;
+    color: #0b7f77;
+}
+.tabs button.is-active {
+    background: #12a79b;
+    border-color: #12a79b;
+    color: #fff;
+}
+.tabs button.is-active i {
+    color: #fff;
+}
+
+/* Browse all jobs */
+.center-cta .btn-dark {
+    background: #12a79b;
+    border-color: #12a79b;
+    color: #fff;
+}
+.center-cta .btn-dark:hover {
+    background: #0f9489;
+    border-color: #0f9489;
+    box-shadow: 0 14px 28px -10px rgba(18, 167, 155, 0.6);
+}
+
+@media (max-width: 1080px) {
+    .hcat-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+@media (max-width: 960px) {
+    .hcat-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+@media (max-width: 760px) {
+    .section--cats {
+        padding: 18px 0 20px;
+    }
+    .hcat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+    .hcat {
+        padding: 7px 9px;
+        gap: 8px;
+    }
+    .hcat-ico {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+    .hcat-txt strong {
+        font-size: 12.5px;
+    }
+}
+
+/* ---------- Category cards: shadow only, teal border on hover, tighter spacing ---------- */
+.hcat-grid {
+    gap: 6px;
+}
+.hcat {
+    gap: 8px;
+    padding: 6px 9px;
+    border: 1.5px solid transparent;
+    background: #fff;
+    box-shadow:
+        0 1px 2px rgba(10, 23, 48, 0.06),
+        0 4px 12px -4px rgba(10, 23, 48, 0.12);
+}
+.hcat:hover {
+    border-color: #12a79b;
+    background: #fff;
+    box-shadow:
+        0 1px 2px rgba(10, 23, 48, 0.06),
+        0 8px 18px -6px rgba(18, 167, 155, 0.45);
+    transform: translateY(-1px);
+}
+.hcat-ico {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+.hcat-txt strong {
+    font-size: 13px;
+}
+.hcat-txt small {
+    font-size: 11px;
+    line-height: 1.2;
+}
+.section--cats {
+    padding: 18px 0 20px;
+}
+.section--cats .section-head {
+    margin-bottom: 10px;
+}
+@media (max-width: 760px) {
+    .hcat-grid {
+        gap: 6px;
+    }
+    .hcat {
+        padding: 6px 8px;
+    }
+}
