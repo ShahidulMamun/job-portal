@@ -10,7 +10,7 @@
     <meta property="og:description" content="@yield('description', 'Search verified jobs across Bangladesh. Free for job seekers.')">
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#f8f5ef">
-    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

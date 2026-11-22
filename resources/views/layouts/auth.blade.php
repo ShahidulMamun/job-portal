@@ -10,7 +10,7 @@
     <title>@yield('title') – LivejobsBD</title>
     <meta name="robots" content="noindex">
     <meta name="theme-color" content="#ffffff">
-    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
