@@ -234,6 +234,10 @@
             <i class="fa-solid fa-city"></i> City
         </a>
 
+        <a href="{{ route('admin.companies.index') }}" class="nav-link {{ request()->routeIs('admin.companies.*') ? 'active' : '' }}">
+            <i class="fa-solid fa-city"></i> Company
+        </a>
+
         <div class="nav-group-label">সেটিংস</div>
         <a href="{{ route('admin.categories.list') }}" class="nav-link {{ request()->routeIs('admin.categories.*') ? 'active' : '' }}">
             <i class="fa-solid fa-tags"></i> ক্যাটাগরি

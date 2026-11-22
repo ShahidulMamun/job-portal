@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CountryController;
 use App\Http\Controllers\Admin\StateController;
 use App\Http\Controllers\Admin\DistrictController;
 use App\Http\Controllers\Admin\CityController;
+use App\Http\Controllers\Admin\CompanyController;
 use App\Http\Controllers\Admin\JobController as AdminJobController;
 use App\Http\Controllers\CategoryController;
 Route::prefix('admin')->name('admin.')->group(function () {
@@ -78,6 +79,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::delete('cities/{city}', [CityController::class, 'destroy'])->name('city.destroy');
 
 
+    Route::resource('companies', CompanyController::class)->except(['show']);
+    Route::patch('companies/{company}/toggle-active', [CompanyController::class, 'toggleActive'])->name('companies.toggle-active');
 
 
 });

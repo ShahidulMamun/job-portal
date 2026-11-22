@@ -17,7 +17,7 @@ class Company extends Model
 
     public function jobs()
     {
-        return $this->hasMany(Job::class);
+        return $this->hasMany(JobPost::class);
     }
 
     public function scopeActive($query)
