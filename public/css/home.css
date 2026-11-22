@@ -250,8 +250,13 @@ select {
 .brand {
     display: inline-flex;
     align-items: center;
-    gap: 11px;
+    gap: 2px;
     color: var(--ink);
+}
+.brand img {
+    display: block;
+    height: 56px;
+    width: auto;
 }
 .brand-mark {
     width: 38px;
@@ -269,6 +274,7 @@ select {
     font-size: 22px;
     font-weight: 600;
     letter-spacing: -0.02em;
+    margin-left: -4px;
 }
 .brand-name b {
     color: var(--gold-deep);
