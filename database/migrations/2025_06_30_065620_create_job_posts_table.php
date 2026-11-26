@@ -13,13 +13,11 @@ return new class extends Migration
     {
         Schema::create('job_posts', function (Blueprint $table) {
             $table->id();
-            // $table->foreign('employer_id')->references('id')->on('employers')->onDelete('cascade'); 
             $table->foreignId('employer_id')->constrained()->onDelete('cascade');
             $table->string('job_code')->unique()->nullable(); // internal tracking
             $table->string('job_title');
             $table->string('slug')->unique()->nullable();
-            $table->string('company_name')->nullable();
-            $table->string('company_logo')->nullable(); // image URL/path
+            $table->foreignId('company_id')->constrained()->onDelete('cascade');
             $table->string('job_type')->index(); // full-time, part-time
             $table->string('category_id')->index();
             $table->string('job_level')->nullable(); // Entry/Mid/Senior
